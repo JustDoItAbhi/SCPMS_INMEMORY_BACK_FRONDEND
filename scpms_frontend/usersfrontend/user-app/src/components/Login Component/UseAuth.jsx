@@ -7,7 +7,7 @@ const AuthContext = createContext();
 export const useAuth = () => {
     return useContext(AuthContext);
 };
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);

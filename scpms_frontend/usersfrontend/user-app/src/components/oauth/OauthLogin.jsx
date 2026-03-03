@@ -29,7 +29,7 @@ const OauthLogin = () => {
       // Remove client_secret from authorization request
     });
   console.log("1st step call login oauth2 server REQUEST")
-    window.location.href = `http://localhost:8080/oauth2/authorize?${params}`;
+    window.location.href = `https://scpms-inmemory-backend.onrender.com/oauth2/authorize?${params}`;
   };
 
   return (

@@ -142,8 +142,6 @@ public class SecurityConfigurations {
         return http.build();
     }
 
-
-
     @Bean
     @Order(2)
     @ConditionalOnProperty(name = "app.security.mode", havingValue = "production")

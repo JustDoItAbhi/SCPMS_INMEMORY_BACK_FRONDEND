@@ -3,8 +3,8 @@
 
 
 
-//   const API_BASE_URL = "http://localhost:8080";
-//   const REDIRECT_URI = "http://localhost:5173/callback";
+//   const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
+//   const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI ||"http://localhost:5173/callback";
 
 // console.log("you are in FINAL LOGIN PAGE")
 //   return (

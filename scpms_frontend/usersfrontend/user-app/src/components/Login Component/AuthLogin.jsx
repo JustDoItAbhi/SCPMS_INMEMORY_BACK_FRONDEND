@@ -33,7 +33,7 @@ const AuthLogin = () => {
                         <div className="login-form">
                             <h2>Welcome Back</h2>
                             {/* <form onSubmit={handleSubmit}> */}
-                                <form method="POST" action="http://localhost:8080/login">
+                                <form method="POST" action="https://scpms-inmemory-backend.onrender.com/login">
                                  <div className="form-group">
                                     <label htmlFor="usename">Email</label>
                                     <input

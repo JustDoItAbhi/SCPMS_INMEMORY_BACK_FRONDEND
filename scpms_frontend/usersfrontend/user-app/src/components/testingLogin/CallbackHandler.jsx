@@ -9,6 +9,10 @@ const CallbackHandler = () => {
   const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
 
+      const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
+  const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI ||"http://localhost:5173/callback";
+
+
   useEffect(() => {
     const exchangeCodeForToken = async () => {
       const params = new URLSearchParams(location.search);
@@ -20,14 +24,14 @@ const CallbackHandler = () => {
       }
 
       try {
-        const response = await fetch("http://localhost:8080/api/auth/oauth2/token", {
+        const response = await fetch(`${API_BASE_URL}/api/auth/oauth2/token`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
             code: code,
-            redirectUri: "http://localhost:5173/callback"
+            redirectUri: `${REDIRECT_URI}/callback`
           }),
         });
 

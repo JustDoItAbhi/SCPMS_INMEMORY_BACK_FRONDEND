@@ -3,8 +3,12 @@ import React, { useEffect } from "react";
 function MyLogin() {
   const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
   const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI ||"http://localhost:5173/callback";
+  console.log("backend url ",API_BASE_URL);
+  console.log("frontend url ",REDIRECT_URI);
+
 
   const clientID = import.meta.env.VITE_CLIENT_ID  ||"abhi";
+  console.log("client ",clientID);
 
   useEffect(() => {
     console.log("Redirecting to OAuth2 authorize...");
