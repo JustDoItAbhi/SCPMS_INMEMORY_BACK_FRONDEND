@@ -1,106 +1,106 @@
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\model_teachers\TeacherAndTopics.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\extra\LogReqdto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\LoginRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\subject_repo\SubjectRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\controller\SubjectController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomJwtAuthenticationConverter.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\exceptionDto\ExceptionalResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\ResetPasswordReqDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\UserDetailsServices.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\Users.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\enums\TOPIC_STATUS.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\GlobalExeptions.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\role_repo\RoleRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\UserExceptions.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\ListOfTechersResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomUsersDetails.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\RoleController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\filterchain\SecurityConfigurations.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\teacherDto\TeacherUserRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\TopicResponeDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\AuthController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherAndTopicsRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\OTPService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\ScpminmemoryApplication.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_subject_repo\StudentSubjectRepo.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\service\StudentsService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherAndTopicsRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\BaseModels.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherUserRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\TopicRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomiseGrandAuthority.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_topic_repo\StudentTopicRepo.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\SystemBeans.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\RoleServicesImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\service\TeacherService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_otp_repo\StudentOtpRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\RoleResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\studentRepo\StudentsRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherUserRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_topic_repo\StudentTopicRepoImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\HtmlEmailService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\exceptionDto\RoleNotFoundException.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\teacherDto\TeacherUserResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\service\TeachersServiceImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\Subjects.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\UpdateTeacherResponeDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherForStudentsResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\servie\SubjectService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\controller\TeacherController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\DefaultController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\iEmailService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\RolesRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\model_teachers\Teachers.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\StudentOtp.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\dtos\SubjectResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherTopicResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\UserService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\student\StudentOtpRequest.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\CorsConfig.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\mapper\SubjectAndStudentMapper.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TopicForTeacherResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\EmailService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\studentRepo\StudentsRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\StudentTopic.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\Roles.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\MailConfig.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\UserController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\Students.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_otp_repo\StudentOtpRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\UserRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherTopicRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\controllers\StudentsController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\GetUserByIdDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\brevoemailservice\SendGridEmailService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\LoginResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\servie\SubjectServiceImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\StudentsResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\UserResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\UserServiceImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\role_repo\RolesRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\UpdateUserDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\UserRepositoryImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\student\StudentSingupReqDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\OtpResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\mappers\UserMapper.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\SignUpRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\SelectSubjectAndStudentDetailsReqDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\RoleService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\SelectSubjectAndStudentDetailsResponseDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\TokenController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\EnvDebugController.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachermappers\TeacherAndTopicMapper.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\StudentAndSubject.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_subject_repo\StudentSubjectRepoImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\service\StudentsServicesImpl.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\StudentsMapper.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\JwtTokenService.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\subject_repo\SubjectRepository.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\StudentRequestDto.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachermappers\TeacherMapper.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\TeachrUser.java
-C:\Users\Admin\Desktop\scpms inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\dtos\SubjectRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\studentRepo\StudentsRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\JwtTokenService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\StudentOtp.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\mapper\SubjectAndStudentMapper.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\StudentTopic.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\UpdateUserDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\StudentAndSubject.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherForStudentsResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\AuthController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherTopicResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\StudentsResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\HtmlEmailService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\UserServiceImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\UpdateTeacherResponeDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\exceptionDto\ExceptionalResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\exceptionDto\RoleNotFoundException.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\GlobalExeptions.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\StudentsMapper.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\service\TeachersServiceImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\studentRepo\StudentsRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherAndTopicsRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\UserRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\controller\TeacherController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\RoleResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherAndTopicsRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\role_repo\RolesRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherUserRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\DefaultController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_otp_repo\StudentOtpRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_topic_repo\StudentTopicRepoImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\teacherDto\TeacherUserRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\RolesRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\LoginRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\OtpResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\ListOfTechersResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomUsersDetails.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\MailConfig.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\role_repo\RoleRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\RoleService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\service\StudentsService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TopicForTeacherResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\subject_repo\SubjectRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\student\StudentSingupReqDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\dtos\SubjectResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\model_teachers\Teachers.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\teacherDto\TeacherUserResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\filterchain\SecurityConfigurations.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_otp_repo\StudentOtpRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachermappers\TeacherAndTopicMapper.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_subject_repo\StudentSubjectRepo.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\subject_repo\SubjectRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_topic_repo\StudentTopicRepo.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\OTPService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\model_teachers\TeacherAndTopics.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\SelectSubjectAndStudentDetailsResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\StudentRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\service\StudentsServicesImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\UserRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\ResetPasswordReqDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\servie\SubjectServiceImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\dtos\SubjectRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\RoleController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\GetUserByIdDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\RoleServicesImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\CorsConfig.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\LoginResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_subject_repo\StudentSubjectRepoImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\Students.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\servie\SubjectService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomiseGrandAuthority.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\TokenController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachermappers\TeacherMapper.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\enums\TOPIC_STATUS.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\Subjects.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\UserResponseDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\extra\LogReqdto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\controllers\UserController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\TopicResponeDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\ScpminmemoryApplication.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\UserExceptions.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherRepository.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\TopicRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\services\UserService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\mappers\UserMapper.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\iEmailService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\controllers\StudentsController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\SystemBeans.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\service\TeacherService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherUserRepositoryImpl.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\UserDetailsServices.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\SignUpRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\dtos\student\StudentOtpRequest.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\students\stDto\SelectSubjectAndStudentDetailsReqDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherTopicRequestDto.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomJwtAuthenticationConverter.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\Roles.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\EmailService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\TeachrUser.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\Users.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\email\brevoemailservice\SendGridEmailService.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\subjects\controller\SubjectController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\config\EnvDebugController.java
+C:\Users\Admin\Desktop\scpms_inmemeory\scpminmemory\src\main\java\com\scpm\inmemory\scpminmemory\userService\registrations\entities\BaseModels.java
