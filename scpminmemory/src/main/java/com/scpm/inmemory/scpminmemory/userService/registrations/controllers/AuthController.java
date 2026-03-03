@@ -15,7 +15,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@CrossOrigin(origins = "https://scpms-frontend-nrcx.onrender.com", allowCredentials = "true")
 public class AuthController {
 
     @PostMapping("/oauth2/token")
