@@ -134,7 +134,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint("http://localhost:5173/final-login"),
+                                new LoginUrlAuthenticationEntryPoint("https://scpms-frontend-nrcx.onrender.com/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
