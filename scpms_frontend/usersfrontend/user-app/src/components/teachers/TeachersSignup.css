@@ -1,0 +1,230 @@
+.teachers-signup-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.teachers-signup-card {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.page-title {
+    text-align: center;
+    color: #1890ff;
+    margin-bottom: 8px !important;
+}
+
+.subtitle {
+    display: block;
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.year-selection {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.section-title {
+    display: block;
+    margin-bottom: 15px !important;
+    font-size: 16px;
+    color: #333;
+}
+
+.year-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.year-button {
+    flex: 1;
+    min-width: 100px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.subjects-card {
+    margin-bottom: 24px;
+    border: 2px solid #e8f4fd;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.loading-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.subjects-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.subject-item {
+    padding: 12px 16px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subject-item:hover {
+    border-color: #1890ff;
+    background-color: #f6ffed;
+}
+
+.subject-item.selected {
+    border-color: #52c41a;
+    background-color: #f6ffed;
+}
+
+.subject-content {
+    display: flex;
+    align-items: center;
+}
+
+.subject-name {
+    font-size: 16px;
+    color: #333;
+}
+
+.selected-icon {
+    color: #52c41a;
+    font-size: 18px;
+    margin-left: auto;
+}
+
+.no-subjects {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+.selected-subject-info {
+    margin-top: 16px;
+}
+
+.selection-alert {
+    border-radius: 6px;
+}
+
+.teacher-form {
+    margin-top: 24px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.complete-button {
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #52c41a, #73d13d);
+    border: none;
+}
+
+.complete-button:hover {
+    background: linear-gradient(135deg, #389e0d, #52c41a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(82, 196, 26, 0.3);
+}
+
+.success-card {
+    margin-top: 24px;
+    border: 2px solid #b7eb8f;
+    background: #f6ffed;
+}
+
+.teacher-profile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.profile-item {
+    padding: 8px 12px;
+    background: white;
+    border-radius: 4px;
+    border-left: 4px solid #1890ff;
+}
+
+.profile-item.highlight {
+    border-left-color: #52c41a;
+    background: #f6ffed;
+}
+
+.debug-card {
+    margin-top: 16px;
+    background: #fff2e8;
+}
+
+.debug-info {
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.debug-info p {
+    margin: 4px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .teachers-signup-container {
+        padding: 10px;
+    }
+    
+    .year-buttons {
+        flex-direction: column;
+    }
+    
+    .year-button {
+        min-width: auto;
+    }
+    
+    .card-title {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .teacher-profile {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .teachers-signup-card {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .page-title {
+        font-size: 24px !important;
+    }
+    
+    .subject-name {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,238 @@
+
+.main-container{
+      display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+background: content-box radial-gradient(rgb(124, 108, 111), rgb(39, 40, 41));
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #eee9e9;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+.topic{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:large;
+    text-underline-offset: 8px;
+    border: solid;
+    color: wheat;
+    height: 100vh;
+    padding: 20 px;
+      justify-content: flex-start;  
+        align-items: flex-start;   
+          box-sizing: border-box;
+}
+.scpms{
+   /* Updated for better responsiveness */
+  padding: 22vh 28vw;
+  color: wheat;
+  margin:  10vw ;
+  text-shadow: 0.2vh 0.3vw #030a11;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  /* Prevent text from breaking into vertical layout */
+  white-space: nowrap;
+  overflow: hidden;
+}
+.scpms span{
+    opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards; 
+}
+
+.scpms span:nth-child(1) { animation-delay: 0.2s; }
+.scpms span:nth-child(2) { animation-delay: 0.4s; }
+.scpms span:nth-child(3) { animation-delay: 0.6s; }
+.scpms span:nth-child(4) { animation-delay: 0.8s; }
+.scpms span:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+p{
+  text-align: center;
+}
+
+.titles{
+     margin-top: 15px;
+  font: italic 1.4rem "Fira Sans", serif;
+  text-underline-offset: 6px;
+  color: #f5deb3;
+  display: block;
+  text-align: center;
+  padding: 0 10px; /* prevents text from touching edges on small screens */
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .titles {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .titles {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    padding: 0 5px;
+  }
+}
+.buttonMenu{
+    float: right;
+    padding: 20px;
+    margin-right: 5vw;
+    margin-top: 4vh;
+    border-radius: 10px;
+    background-color:wheat;
+}
+.objective{
+    margin: 10px;
+            text-align: center;
+}
+.overview-section {
+  padding: 5vw 10vw;
+  color: #fdf5e6;
+  font-family: "Fira Sans", serif;
+  text-align: center;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  margin: 6vh auto;
+  max-width: 1200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.overview-section h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: wheat;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  transition: color 0.4s ease;
+}
+
+.overview-section h2:hover {
+  color: #ffd580;
+}
+
+.overview-section p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 2rem;
+  text-align: justify;
+  color: #f8f8f8;
+}
+
+.videointro {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 15px;
+  display: block;
+  margin: 30px auto;
+  box-shadow: 0 4px 20px rgba(247, 245, 245, 0.959);
+  opacity: 10;                 /* start invisible */
+  transform: translateY(20px); /* start slightly below */
+  /* animation: videoFadeIn 1s ease forwards;  */
+    filter: brightness(0.8);
+    animation: videoFilter 2s ease forwards;
+}
+
+@keyframes videoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);  /* move to original position */
+  }
+}
+@keyframes videoFilter {
+  to {
+    filter: brightness(1);
+  }
+}
+.videointro:hover {
+  transform: scale(1.03);
+  transition: transform 0.4s ease;  /* smooth scaling on hover */
+}
+
+
+.overview-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.overview-section li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.overview-section li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+p{
+    margin:10px ;
+            color: white;
+}
+
+.contacts {
+  width: 100%;
+  background-color: rgb(124, 108, 111),;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.contacts h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.contacts p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 36px;
+  }
+
+  .overview,
+  .objectives,
+  .about {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .buttonMenu {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}ul{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+     list-style-type: none;
+}

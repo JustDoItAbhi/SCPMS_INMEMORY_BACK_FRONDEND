@@ -1,0 +1,156 @@
+.subject-year-container {
+    padding: 20px;
+    background: content-box radial-gradient(rgb(124, 108, 111), rgb(39, 40, 41));
+    min-height: 100vh;
+}
+
+.subject-year-card {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(24, 22, 22, 0.904);
+    background: content-box radial-gradient(rgb(124, 108, 111), rgb(39, 40, 41));
+}
+
+.page-title {
+    text-align: center;
+    color:  wheat;
+    margin-bottom: 30px !important;
+}
+
+.year-selection {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.year-buttons {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.year-button {
+    min-width: 80px;
+}
+
+.subjects-card {
+    margin-top: 20px;
+}
+
+.selection-info {
+    padding: 4px 12px;
+    background-color:  rgb(168, 157, 136);
+    border-radius: 4px;
+}
+
+.loading-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.subject-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #dbd5d5;
+    transition: background-color 0.3s;
+}
+
+.subject-item:hover {
+    background-color: rgb(168, 157, 136);
+}
+
+.subject-checkbox {
+    width: 100%;
+}
+
+.subject-checkbox .ant-checkbox-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.subject-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+.subject-name {
+    font-size: 14px;
+}
+
+.subject-code {
+    font-size: 12px;
+}
+
+.selected-icon {
+    color: #070f02;
+    font-size: 16px;
+}
+
+.subjects-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.clear-button {
+    border-color: #ff4d4f;
+    color: #ff4d4f;
+}
+
+.clear-button:hover {
+    border-color: #ff7875;
+    color: #ff7875;
+}
+
+.register-button {
+    min-width: 250px;
+}
+
+.no-subjects {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+.summary-card {
+    margin-top: 20px;
+}
+
+.alert-message {
+    margin: 16px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subject-year-container {
+        padding: 10px;
+    }
+    
+    .year-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .year-button {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .register-button {
+        min-width: auto;
+    }
+}
