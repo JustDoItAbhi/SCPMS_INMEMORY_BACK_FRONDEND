@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "https://scpms-frontend-nrcx.onrender.com", allowCredentials = "true")
+@CrossOrigin(origins = "https://scpms-frontend-nrcx.onrender.com/callback", allowCredentials = "true")
 public class UserController {
     @Autowired
     private UserService userService;
