@@ -194,7 +194,7 @@ public class SecurityConfigurations {
 
                 .formLogin(form -> form
 //                        .loginPage("https://scpms-frontend-nrcx.onrender.com/final-login")
-                        .loginPage("https://scpms-frontend-nrcx.onrender.com/final-login")
+                        .loginPage("http://localhost:5173/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )

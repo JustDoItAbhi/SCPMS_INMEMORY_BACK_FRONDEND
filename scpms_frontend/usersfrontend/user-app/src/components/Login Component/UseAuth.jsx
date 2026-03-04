@@ -7,7 +7,8 @@ const AuthContext = createContext();
 export const useAuth = () => {
     return useContext(AuthContext);
 };
-const BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
+const BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
+console.log("BASE URL ",BASE_URL)
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -91,7 +92,7 @@ const fallbackLogin = (username, password) => {
 
     const logout = async () => {
         try {
-            await axios.post(`http://localhost:8080/logout`, {}, {
+            await axios.post(`${BASE_URL}/logout`, {}, {
                 withCredentials: true
             });
         } catch (error) {

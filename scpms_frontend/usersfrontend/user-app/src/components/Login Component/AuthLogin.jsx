@@ -13,7 +13,7 @@ const AuthLogin = () => {
     const [loading, setLoading] = useState(false);
     const { login } = useAuth();
     const navigate = useNavigate();
-
+const BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -33,7 +33,7 @@ const AuthLogin = () => {
                         <div className="login-form">
                             <h2>Welcome Back</h2>
                             {/* <form onSubmit={handleSubmit}> */}
-                                <form method="POST" action="https://scpms-inmemory-backend.onrender.com/login">
+                               <form method="POST" action={`${BASE_URL}/login`}>
                                  <div className="form-group">
                                     <label htmlFor="usename">Email</label>
                                     <input
