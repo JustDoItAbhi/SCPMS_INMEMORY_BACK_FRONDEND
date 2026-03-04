@@ -55,20 +55,34 @@ public class DefaultController implements ErrorController {
             return ResponseEntity.ok(response);
         }
 
-
-        // Handle error properly
-        @RequestMapping("/error")
-        public ResponseEntity<Map<String, Object>> handleError(HttpServletRequest request) {
-            Map<String, Object> errorDetails = new HashMap<>();
-            errorDetails.put("timestamp", Instant.now());
-            errorDetails.put("status", getErrorStatus(request));
-            errorDetails.put("error", "Not Found");
-            errorDetails.put("message", "The requested resource was not found");
-            errorDetails.put("path", getOriginalUrl(request));
-
-            logger.warn("Error handled for path: {}", getOriginalUrl(request));
-            return new ResponseEntity<>(errorDetails, getHttpStatus(request));
-        }
+//    private static final Logger logger = LoggerFactory.getLogger(DefaultController.class);
+    @GetMapping("/error")
+    public String error() {
+        return "Error page";
+    }
+    // Only handle error dispatches, not direct requests
+//    @RequestMapping("/error")
+//    public ResponseEntity<Map<String, Object>> handleError(HttpServletRequest request) {
+//        // Check if this is a real error dispatch or a direct request
+//        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+//        String errorPath = (String) request.getAttribute("javax.servlet.error.request_uri");
+//
+//        // If it's not an error dispatch (no status code), treat as 404
+//        if (statusCode == null) {
+//            statusCode = 404;
+//            errorPath = request.getRequestURI();
+//        }
+//
+//        Map<String, Object> errorDetails = new HashMap<>();
+//        errorDetails.put("timestamp", Instant.now());
+//        errorDetails.put("status", statusCode);
+//        errorDetails.put("error", statusCode == 404 ? "Not Found" : "Error");
+//        errorDetails.put("message", "The requested resource was not found");
+//        errorDetails.put("path", errorPath);
+//
+//        logger.warn("Error handled for path: {} with status: {}", errorPath, statusCode);
+//        return new ResponseEntity<>(errorDetails, HttpStatus.valueOf(statusCode));
+//    }
 
         private HttpStatus getHttpStatus(HttpServletRequest request) {
             Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");

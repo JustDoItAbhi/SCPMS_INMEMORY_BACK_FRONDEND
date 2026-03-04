@@ -53,14 +53,14 @@ public class UserController {
         return ResponseEntity.status(401).body("{\"authenticated\": false}");
     }
 
-    @GetMapping("/")
+    @GetMapping("/server")
     public String home() {
         return "OAuth2 Server is running!";
     }
-    @GetMapping("/error")
-    public String error() {
-        return "Error page";
-    }
+//    @GetMapping("/error")
+//    public String error() {
+//        return "Error page";
+//    }
 
     @PostMapping("/StudentSignUp")
     public ResponseEntity<String> sendOtpToStudentEmail(@RequestBody StudentOtpRequest request){
