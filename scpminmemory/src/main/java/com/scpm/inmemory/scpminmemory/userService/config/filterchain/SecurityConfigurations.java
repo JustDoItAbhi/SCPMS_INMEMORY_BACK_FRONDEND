@@ -152,7 +152,7 @@ public class SecurityConfigurations {
 
     private SecurityFilterChain buildOAuth2SecurityForProduction(HttpSecurity http) throws Exception {
         http
-//                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authz -> authz
