@@ -152,7 +152,7 @@ public class SecurityConfigurations {
 
     private SecurityFilterChain buildOAuth2SecurityForProduction(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())
+//                .csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authz -> authz
@@ -232,11 +232,15 @@ public class SecurityConfigurations {
     String clientPassword;
     @Value("${spring.registerClient.redirectUri}")
     String redirectUri;
+
     @Value("${spring.registerClient.postLogoutRedirectUri}")
     String postLogoutRedirectUri;
 
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
+        System.out.println("REDIRECT URI= "+redirectUri);
+        System.out.println("PORT URI= "+postLogoutRedirectUri);
+        System.out.println("CLIENT ID= "+clientId);
         PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId(clientId)
