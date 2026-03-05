@@ -13,20 +13,25 @@ const AuthLogin = () => {
     const [loading, setLoading] = useState(false);
     const { login } = useAuth();
     const navigate = useNavigate();
+
 const BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
+
         });
         setError('');
     };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError('');
     }
+        console.log("email", formData.username);
 
                 return (
                     <div className="login-container">

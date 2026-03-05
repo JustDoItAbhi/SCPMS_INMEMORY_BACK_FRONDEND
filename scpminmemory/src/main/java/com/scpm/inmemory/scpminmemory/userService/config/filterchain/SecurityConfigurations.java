@@ -68,8 +68,20 @@ import java.util.UUID;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfigurations {
+    @Value("${spring.registerClient.clientId}")
+    String clientId;
+    @Value("${spring.registerClient.password}")
+    String clientPassword;
+    @Value("${spring.registerClient.redirectUri}")
+    String redirectUri;
+    @Value("${spring.base.url}")
+    String url;
+
+    @Value("${spring.registerClient.postLogoutRedirectUri}")
+    String postLogoutRedirectUri;
 
     private final JwtTokenService jwtTokenService;
+
     @Lazy
     public SecurityConfigurations(JwtTokenService jwtTokenService) {
         this.jwtTokenService = jwtTokenService;
@@ -134,7 +146,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint("/final-login"),
+                                new LoginUrlAuthenticationEntryPoint( url+ "/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -194,7 +206,7 @@ public class SecurityConfigurations {
 
                 .formLogin(form -> form
 //                        .loginPage("https://scpms-frontend-nrcx.onrender.com/final-login")
-                        .loginPage("http://localhost:5173/final-login")
+                        .loginPage(url+ "/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
@@ -223,25 +235,18 @@ public class SecurityConfigurations {
                 );
         return http.build();
     }
-
-
-
-    @Value("${spring.registerClient.clientId}")
-    String clientId;
-    @Value("${spring.registerClient.password}")
-    String clientPassword;
-    @Value("${spring.registerClient.redirectUri}")
-    String redirectUri;
-
-    @Value("${spring.registerClient.postLogoutRedirectUri}")
-    String postLogoutRedirectUri;
-
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         System.out.println("REDIRECT URI= "+redirectUri);
         System.out.println("PORT URI= "+postLogoutRedirectUri);
         System.out.println("CLIENT ID= "+clientId);
-        PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
+        System.out.println("client password = " +clientPassword);
+
+        BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId(clientId)
                 .clientSecret(passwordEncoder.encode(clientPassword))
@@ -250,13 +255,15 @@ public class SecurityConfigurations {
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .redirectUri(redirectUri)
                 .postLogoutRedirectUri(postLogoutRedirectUri)
+//                .redirectUri("http://localhost:5173/callback")
+//                .postLogoutRedirectUri("http://localhost:5173")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
                 .build();
-
         return new InMemoryRegisteredClientRepository(oidcClient);
     }
+
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();

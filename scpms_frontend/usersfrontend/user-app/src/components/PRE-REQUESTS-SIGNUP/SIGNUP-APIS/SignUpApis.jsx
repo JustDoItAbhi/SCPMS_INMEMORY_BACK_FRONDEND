@@ -6,17 +6,15 @@ const BASE_URL = `${import.meta.env.VITE_DIRECT_BACKEND_URL}/api/user`;
 export const StudentSendingOtpForSignUP = async (values) => {
     try {
         const sendOtp = await axios.post(`${BASE_URL}/StudentSignUp`, values);
-        console.log(sendOtp.data);
+        console.log("YOUR OTP ",sendOtp.data);
         return sendOtp.data;
     } catch (err) {
         console.log(err.message);
     }
 }
 
-export const ConfimeStudentOtp = async (values) => {  // Change 'payload' to 'values'
+export const ConfimeStudentOtp = async (values) => {
     try {
-
-
         const response = await axios.post(`${BASE_URL}/ConfirmStudentSignUp/otp`, values);
 
         console.log("OTP Verification Response:", response.data);

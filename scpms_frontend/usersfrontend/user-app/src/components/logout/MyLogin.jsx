@@ -16,10 +16,10 @@ function MyLogin() {
     const authUrl =
       `${API_BASE_URL}/oauth2/authorize?response_type=code` +
       `&client_id=${clientID}` +
-      `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
-      `&scope=openid%20profile` +
-      `&state=xyz123`; // ⚠ note the & before state
-
+      `&redirect_uri=${REDIRECT_URI}` +
+      `&scope=openid%20profile` ;
+      // `&state=xyz123`;
+      // `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
     console.log("AUTH URL:", authUrl);
     window.location.href = authUrl; // triggers redirect
   }, []);

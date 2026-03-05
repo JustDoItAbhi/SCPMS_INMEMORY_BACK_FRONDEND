@@ -3,8 +3,14 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { ConfimeStudentOtp } from "./SignUpApis";
 function CheckOtp() {
-    const [otp, setOtp] = useState("");
+    // const [otp, setOtp] = useState("");
         const [email, setEmail] = useState("");
+  const otp = localStorage.getItem('otp');
+// const otp = storedOtp ? JSON.parse(storedOtp) : null;
+
+const username=localStorage.getItem("email");
+// const username=storedEmail ? JSON.parse(storedEmail):null;
+        console.log(" CHECK OTP ",otp)
 
     const navigate = useNavigate();
 
@@ -13,7 +19,9 @@ function CheckOtp() {
               const userData = {
                 ...values
             };
+            // i change here opt confirmation from email to manuel
             const compareOtp = await ConfimeStudentOtp(userData);
+            // const compareOtp = await ConfimeStudentOtp(userData);
             console.log("OTP REQUEST ",compareOtp);
 
             if (compareOtp) {
@@ -55,7 +63,7 @@ function CheckOtp() {
                     fontSize: "1.1rem",
                     margin: 0
                 }}>
-                    Enter the verification code sent to your email
+                    Enter the verification code sent to your email {otp}
                 </p>
             </div>
 
@@ -93,13 +101,14 @@ function CheckOtp() {
                         }
                         name="email"
                         rules={[
-                            { required: true, message: "Please enter your email" },
+                            // { required: true, message: "Please enter your email" },
                             { type: 'email', message: 'Please enter a valid email' }
                         ]}
                     >
                         <Input 
                             type="email" 
                             placeholder="Enter your email"
+                            // defaultValue={username}
                             style={{
                                 height: "45px",
                                 borderRadius: "10px",
@@ -120,20 +129,20 @@ function CheckOtp() {
                                 fontWeight: "500",
                                 fontSize: "1rem"
                             }}>
-                                OTP CODE
+                                OTP CODE (please enter below code) <span>{otp}</span> 
                             </span>
                         }
                         name="otp"
                         rules={[
-                            { required: true, message: "Please enter your OTP" },
+                            { required: true, message: "Please enter your OTP " },
                             { len: 6, message: "OTP must be 6 characters" }
                         ]}
                     >
-                        <Input 
-                            type="text" 
-                            placeholder="Enter your OTP"
-                            maxLength={6}
-                            style={{
+                        <Input type="text" 
+                        defaultChecked={otp}
+                        placeholder={otp}
+                        defaultValue={otp}
+                         maxLength={6} style={{
                                 height: "45px",
                                 borderRadius: "10px",
                                 border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -146,9 +155,10 @@ function CheckOtp() {
                                 padding: "0 15px"
                             }}
                             onInput={(e) => {
+                                // `${otp}`
                                 e.target.value = e.target.value.replace(/[^0-9]/g, '').toUpperCase();
                             }}
-                        />
+                       / >
                     </Form.Item>
 
                     {/* Submit Button */}

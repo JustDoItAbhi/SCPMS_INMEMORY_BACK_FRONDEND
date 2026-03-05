@@ -163,15 +163,17 @@ public class UserServiceImpl implements UserService{
         }
         UserResponseDto responseDto= UserMapper.fromUserEntity(users);
         if (dto.getRolesList().contains("STUDENT")) {
-            emailService.sendOtp(users.getEmail(),
-                    "WELCOME TO S.C.P.M.S MANAGEMENT SYSTEM 😎",
-                    "WORK HARD AND ACHIEVE YOUR GOALS, ALL THE BEST 👍");
+            System.out.println("email ready to send");
+//            emailService.sendOtp(users.getEmail(),
+//                    "WELCOME TO S.C.P.M.S MANAGEMENT SYSTEM 😎",
+//                    "WORK HARD AND ACHIEVE YOUR GOALS, ALL THE BEST 👍");
         }
 
         if (dto.getRolesList().contains("TEACHER")) {
-            emailService.sendOtp(users.getEmail(),
-                    "WELCOME TO S.C.P.M.S MANAGEMENT SYSTEM 😎",
-                    "THANK YOU FOR JOINING US, ALL THE BEST 👍");
+            System.out.println("email ready to send");
+//            emailService.sendOtp(users.getEmail(),
+//                    "WELCOME TO S.C.P.M.S MANAGEMENT SYSTEM 😎",
+//                    "THANK YOU FOR JOINING US, ALL THE BEST 👍");
         }
         userResponseCache.put(users.getEmail(), responseDto);
         System.out.println("USER CREATED SUCCSSFULLY "+users.getName());
@@ -181,32 +183,34 @@ public class UserServiceImpl implements UserService{
     @Override
     public String studentSignup(String email, String role) {
         System.out.println("YOU ARE IN SIGNUP AS  STUDNET METHOD NOW ");
-
         Roles   roleEntity = rolesRepository.findByRoleName(role)
                     .orElseThrow(() -> new UserExceptions("NO SUCH ROLE EXISTS " + role));
-
-
         if (roleEntity.getRoleName().equals("STUDENT")) {
 
-            boolean isOtpSent = sendOtpToUserSignUp(email);
-            if (!isOtpSent) {
+            String  isOtpSent = sendOtpToUserSignUp(email);
+            if (isOtpSent==null) {
                 throw new UserExceptions("OTP NOT SENT");
             }
-            return "STUDENTS";
+            return isOtpSent;
 
         } else if (roleEntity.getRoleName().equals("APPLICANT_TEACHER")) {
+            // send admin to this url so that admin can enrol applicant teacher
+            // to teacher http://localhost:8080/api/user/confirmTeacherRole
 
             try {
                 Optional<TeachrUser> teacher = teacherUserRepository.findByTeacherEmail(email);
-                if (teacher.isPresent()) return "CREATE PROFILE";
+                if (teacher.isPresent())
+//                    return "redirect:http://localhost:5173/TEACHER-WAIT";
+                    return "CREATE PROFILE";
+//                "redirect:http://localhost:5173/callback";
             } catch (Exception e) {
                 if (teacherMap.containsKey(email))
                     return "CREATE PROFILE";
             }
 
-            emailService.sendOtp("arvinderpalsingh2321@gmail.com",
-                    "REQUEST FOR SIGN UP FROM TEACHER",
-                    "ALLOW TEACHER TO SIGN UP \n " + email);// NAVIGATE TO SOME URL
+//            emailService.sendOtp("arvinderpalsingh2321@gmail.com",
+//                    "REQUEST FOR SIGN UP FROM TEACHER",
+//                    "ALLOW TEACHER TO SIGN UP \n " + email);// NAVIGATE TO SOME URL
 
             return "PLEASE WAIT";
         }
@@ -214,7 +218,7 @@ public class UserServiceImpl implements UserService{
         throw new UserExceptions("YOU ARE NOT ALLOWED TO ACCESS");
 
     }
-    private boolean sendOtpToUserSignUp(String email){
+    private String sendOtpToUserSignUp(String email){
 
         OtpResponseDto responseDto=new OtpResponseDto();
         SecureRandom random = new SecureRandom();
@@ -254,10 +258,10 @@ public class UserServiceImpl implements UserService{
         String key=otp+email;
         String optValue=otp;
 
-        emailService.sendOtp(email,"YOUR OTP IS "+ otp,"THANK YOU");
-        System.out.println("EMAIL SENT FOR SIGNUP ");
+//        emailService.sendOtp(email,"YOUR OTP IS "+ otp,"THANK YOU");
+//        System.out.println("EMAIL SENT FOR SIGNUP ");
 //        userRepository.save(users);
-        return true;
+        return optValue;
     }
     @Override
     public String confirmStudentOtp(String email, String otp) {
@@ -288,8 +292,10 @@ public class UserServiceImpl implements UserService{
     public TeacherUserResponseDto approveTeacherSignUp(TeacherUserRequestDto dto) {
             Optional<Users>exsitingUser=userRepository.findByEmail(dto.getTeacherEmail());
         if(exsitingUser.isPresent()){
-            emailService.sendOtp(dto.getTeacherEmail(),"you already regitered teacher please signup or reset password "+ dto.getRole(), "THANK YOUR FOR REACHING US ");
-            System.out.println("EMAIL SENT FOR SIGNUP ");
+            System.out.println("WE CANNOT SEND EMAIL BECAUSE SERVER IS DOWN ");
+//            return    "redirect:http://localhost:5173/callback";
+//            emailService.sendOtp(dto.getTeacherEmail(),"you already regitered teacher please signup or reset password "+ dto.getRole(), "THANK YOUR FOR REACHING US ");
+//            System.out.println("EMAIL SENT FOR SIGNUP ");
         }
             Optional<Roles>rolesOptional=rolesRepository.findByRoleName(dto.getRole());
             if(rolesOptional.isEmpty()){

@@ -5,16 +5,21 @@ import { useNavigate } from "react-router-dom";
 
 
 function StudentSignupWithOtp() {
-
+const[otp,setOtp]=useState("");
     const naviagte = useNavigate();
 
 
     const onFinish = async (values) => {
+        console.log("VALUES",values.email)
+        localStorage.setItem("email",values.email);
         try {
             const signUpStudent = await StudentSendingOtpForSignUP(values);
-            console.log(signUpStudent);
+            console.log("STUDENT OTP ",signUpStudent);
+           JSON.stringify(localStorage.setItem("otp",signUpStudent));
+            setOtp(signUpStudent);
 
-            if (signUpStudent==="STUDENTS") {
+            // if (signUpStudent==="STUDENTS") {
+            if (signUpStudent===signUpStudent) {
                 naviagte("/CHECK-OTP-FOR-SIGNUP");
             }
             if(signUpStudent==="CREATE PROFILE"){

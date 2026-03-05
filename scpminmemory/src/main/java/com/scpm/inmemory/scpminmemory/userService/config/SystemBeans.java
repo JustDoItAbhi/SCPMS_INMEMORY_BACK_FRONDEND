@@ -13,8 +13,5 @@ public class SystemBeans {
 //        return authConfig.getAuthenticationManager();
 //    }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+
 }

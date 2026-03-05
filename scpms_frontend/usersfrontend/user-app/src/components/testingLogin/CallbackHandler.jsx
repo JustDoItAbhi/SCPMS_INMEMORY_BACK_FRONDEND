@@ -31,7 +31,7 @@ const CallbackHandler = () => {
           },
           body: JSON.stringify({
             code: code,
-            redirectUri: `${REDIRECT_URI}/callback`
+            redirectUri: `${REDIRECT_URI}`
           }),
         });
 
