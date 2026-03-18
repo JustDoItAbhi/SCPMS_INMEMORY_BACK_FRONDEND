@@ -1,4 +1,4 @@
-package com.scpm.inmemory.scpminmemory.userService.registrations.repos;
+package com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher;
 
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.modals_student.enums.TOPIC_STATUS;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.TeacherAndTopics;

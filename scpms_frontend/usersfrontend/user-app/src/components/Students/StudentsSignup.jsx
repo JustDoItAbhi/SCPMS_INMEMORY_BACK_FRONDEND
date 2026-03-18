@@ -96,7 +96,7 @@ function StudentsSignup() {
     }, [userDetails]);
 
     return (
-              <div style={{ background:"content-box radial-gradient(rgba(173, 153, 157, 1), rgba(110, 114, 119, 1))"}}>
+              <div style={{height:"100vh", background:"content-box radial-gradient(rgba(173, 153, 157, 1), rgba(110, 114, 119, 1))"}}>
              
             <Form
                 form={basicForm} // Fixed: basicFrom -> basicForm
@@ -173,21 +173,11 @@ function StudentsSignup() {
                     </Button>
                     <br/>
                        <br/>
-                        <Button
-                        type="primary"
-                        htmlType="submit"
-                        style={{
-                            background: '#adb3b8ff',
-                            color: 'white',
-                            border: 'none',
-                            padding: '8px 16px',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            width: '100%'
-                        }}
-                    >
-                        IF ALREADY REGISTERED ? <Link to="/Student-dashboard"> Click Here</Link>
-                    </Button>
+                        {/* <Button type="primary" htmlType="submit" style={{
+                            background: '#adb3b8ff',color: 'white',border: 'none',padding: '8px 16px',borderRadius: '4px',cursor: 'pointer', width: '100%'}}
+                    > */}
+                        {/* IF ALREADY REGISTERED ? <Link to="/Student-dashboard"> Click Here</Link> */}
+                    {/* </Button> */}
                 </Form.Item>
             </Form>
             
@@ -216,19 +206,19 @@ function StudentsSignup() {
                 </div>
             )}
             
-            <div style={{ 
+            {/* <div style={{ 
                 marginTop: 20, 
                 padding: 10, 
-                background: '#fff3cd',
+                background: '#adb3b8ff',
                 maxWidth: 400,
                 margin: '20px auto',
                 fontSize: '12px'
-            }}>
-                <h4>YOUR DETAIL:</h4>
+            }}> */}
+                {/* <h4>YOUR DETAIL:</h4>
                 <p><strong>User ID from localStorage:</strong> {userDetails || 'Not found'}</p>
                 <p><strong>Student data loaded:</strong> {student ? 'Yes' : 'No'}</p>
-                {student && <p><strong>Student ID:</strong> {student.id}</p>}
-            </div>
+                {student && <p><strong>Student ID:</strong> {student.id}</p>} */}
+            {/* </div> */}
         </div>
     )
 }

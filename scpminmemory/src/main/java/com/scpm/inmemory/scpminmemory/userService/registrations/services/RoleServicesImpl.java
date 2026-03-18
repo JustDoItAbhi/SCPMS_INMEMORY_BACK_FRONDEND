@@ -5,10 +5,13 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.reponseDtos
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Roles;
 import com.scpm.inmemory.scpminmemory.userService.registrations.exceptions.exceptionDto.RoleNotFoundException;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.role_repo.RolesRepository;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.io.File;
+import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -25,17 +28,16 @@ public class RoleServicesImpl implements RoleService{
 
     @Override
     public RoleResponseDto createRoles(RolesRequestDto dto) {
-//        Optional<Roles> exsitingRole=rolesRepository.findByRoleName(dto.getRoles());
-//        if(exsitingRole.isPresent()){
-//            throw new RoleNotFoundException("ROLE ALREADY EXISTS  " + dto.getRoles());
-//        }
-//        exsitingRole.get().setRoleName(dto.getRoles());
-//        exsitingRole.setRoleName(dto.getRoles());
-        Roles roles=new Roles();
-        roles.setRoleName(dto.getRoles());
-        rolesRepository.save(roles);
-        return roleMapper(roles);
+    Optional<Roles>roles=rolesRepository.findByRoleName(dto.getRoles());
+    if(roles.isPresent()){
+        throw new RoleNotFoundException("role already exists"+ dto.getRoles());
     }
+        Roles admin=new Roles();
+        admin.setRoleName(dto.getRoles());
+        rolesRepository.save(admin);
+    return roleMapper(admin);
+    }
+
 
     @Override
     public List<RoleResponseDto> allRoles() {
@@ -45,6 +47,23 @@ public class RoleServicesImpl implements RoleService{
         responseDtos.add(roleMapper(roles1));
     }
         return responseDtos;
+    }
+
+    @Override
+    public String autoRoleCreateing() {
+        Roles admin=new Roles();
+        admin.setRoleName("ADMIN");
+        rolesRepository.save(admin);
+        Roles teacher=new Roles();
+        teacher.setRoleName("TEACHER");
+        rolesRepository.save(teacher);
+        Roles student=new Roles();
+        student.setRoleName("STUDENT");
+        rolesRepository.save(student);
+        Roles applicent=new Roles();
+        applicent.setRoleName("APPLICANT_TEACHER");
+        rolesRepository.save(applicent);
+        return "ALL ROLE CREATED";
     }
 
 

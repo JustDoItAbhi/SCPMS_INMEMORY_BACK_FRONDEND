@@ -3,7 +3,7 @@ import { CreateUser } from "../apis";
 import { Button, Form, Input, message, Select } from "antd";
 import { useNavigate } from "react-router-dom";
 
-function CreatingUsers() {
+function CreatingTeacher() {
     const [user, setUser] = useState(null);
      const [basicForm] = Form.useForm();
 
@@ -82,12 +82,11 @@ const navigate=useNavigate();
                 <Form.Item
                     label="Role"
                     name="rolesList"
-                    initialValue="STUDENT" 
+                    initialValue="TEACHER" 
                     rules={[{required:true,message:"Please select a role"}]}
                 >
                     <Select placeholder ="Select a role">
-                        <Select.Option value="STUDENT">STUDENT</Select.Option>
-                        {/* <Select.Option value="TEACHER">TEACHER</Select.Option> */}
+                        <Select.Option value="TEACHER">TEACHER</Select.Option>
                 
                     </Select>
                 </Form.Item>
@@ -130,4 +129,4 @@ const navigate=useNavigate();
         </div>
     )
 }
-export default CreatingUsers;
+export default CreatingTeacher;

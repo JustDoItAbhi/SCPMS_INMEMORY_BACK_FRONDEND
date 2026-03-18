@@ -9,4 +9,5 @@ import java.util.List;
 public interface RoleService {
     RoleResponseDto createRoles(RolesRequestDto dto);
     List<RoleResponseDto>allRoles();
+    String autoRoleCreateing();
 }

@@ -20,8 +20,11 @@ private RoleService roleService;
     return ResponseEntity.ok(roleService.createRoles(dto));
 }
 @GetMapping("/getAllRoles")
-
 public ResponseEntity<List<RoleResponseDto>> allRole(){
     return ResponseEntity.ok(roleService.allRoles());
+}
+@PostMapping("/manuelCreatingRole")
+    public ResponseEntity<String>manuelCreatingRole(){
+    return ResponseEntity.ok(roleService.autoRoleCreateing());
 }
 }

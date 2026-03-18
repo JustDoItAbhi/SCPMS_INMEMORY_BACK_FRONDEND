@@ -2,7 +2,7 @@ package com.scpm.inmemory.scpminmemory.userService.registrations.repos.student_t
 
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.modals_student.StudentTopic;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.Teachers;
-import com.scpm.inmemory.scpminmemory.userService.registrations.repos.TeacherRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

@@ -10,6 +10,7 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.Si
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.UpdateUserDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.email.iEmailService;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.modals_student.Students;
+import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.ApplicentTeacher;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.Teachers;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Roles;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.StudentOtp;
@@ -17,11 +18,12 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_mo
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Users;
 import com.scpm.inmemory.scpminmemory.userService.registrations.exceptions.UserExceptions;
 import com.scpm.inmemory.scpminmemory.userService.registrations.mappers.UserMapper;
-import com.scpm.inmemory.scpminmemory.userService.registrations.repos.TeacherRepository;
-import com.scpm.inmemory.scpminmemory.userService.registrations.repos.TeacherUserRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher.TeacherRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher.TeacherUserRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.UserRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.role_repo.RolesRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.student_otp_repo.StudentOtpRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacheruser_applicent.TeachrUserApplicentRepo;
 import com.scpm.inmemory.scpminmemory.userService.teachers.teachermappers.TeacherMapper;
 import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherResponseDto;
 import io.jsonwebtoken.Jwts;
@@ -30,7 +32,6 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 
 import org.springframework.stereotype.Service;
@@ -61,7 +62,8 @@ public class UserServiceImpl implements UserService{
     private TeacherUserRepository teacherUserRepository;
     @Autowired
     private TeacherRepository teacherRepository;
-
+    @Autowired
+    private TeachrUserApplicentRepo teacherApplicentRepo;
     @Autowired
    private final BCryptPasswordEncoder passwordEncoder;
     @Autowired
@@ -196,17 +198,30 @@ public class UserServiceImpl implements UserService{
         } else if (roleEntity.getRoleName().equals("APPLICANT_TEACHER")) {
             // send admin to this url so that admin can enrol applicant teacher
             // to teacher http://localhost:8080/api/user/confirmTeacherRole
-
+            Optional<TeachrUser> teacher;
             try {
-                Optional<TeachrUser> teacher = teacherUserRepository.findByTeacherEmail(email);
-                if (teacher.isPresent())
-//                    return "redirect:http://localhost:5173/TEACHER-WAIT";
+                teacher = teacherUserRepository.findByTeacherEmail(email);
+                if(teacher.isEmpty()){
+                    ApplicentTeacher applicentTeacher=new ApplicentTeacher();
+                    applicentTeacher.setEmail(email);
+                    applicentTeacher.setApplicentRole(role);
+                    teacherApplicentRepo.save(applicentTeacher);
+                }
+                if (teacher.isPresent()) {
                     return "CREATE PROFILE";
+                }else {
+
+                    System.out.println("TEACHER APPLICENT DETAILS "+teacher.get().getRole());
+                    return "CREATE PROFILE";
+                }
+
 //                "redirect:http://localhost:5173/callback";
             } catch (Exception e) {
                 if (teacherMap.containsKey(email))
                     return "CREATE PROFILE";
             }
+
+//                    return "redirect:http://localhost:5173/TEACHER-WAIT";
 
 //            emailService.sendOtp("arvinderpalsingh2321@gmail.com",
 //                    "REQUEST FOR SIGN UP FROM TEACHER",
@@ -326,9 +341,21 @@ public class UserServiceImpl implements UserService{
 List<Teachers>teachersList=teacherRepository.findByApplicentRole(applicant_teacher_role);
 List<TeacherResponseDto>responseDtos=new ArrayList<>();
 for(Teachers teachers:teachersList){
+    if(teachers==null){
+
+    }
     responseDtos.add(TeacherMapper.fromTeacherEntity(teachers));
+    System.out.println("all applicent teachers "+teachers);
+
 }
 return responseDtos;
+    }
+
+    @Override
+    public List<ApplicentTeacher> getApplicents() {
+        List<ApplicentTeacher>applicentTeacherList=teacherApplicentRepo.findAll();
+
+        return applicentTeacherList;
     }
 
     private boolean confimOtp(String email, String Otp) {
@@ -359,8 +386,6 @@ return responseDtos;
 
         return true;
     }
-
-
 
     @Override
     public LoginResponseDto login(String email, String password) {

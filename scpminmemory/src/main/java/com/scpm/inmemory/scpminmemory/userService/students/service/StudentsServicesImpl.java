@@ -8,7 +8,7 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.entities.modals_
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.Teachers;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Users;
 import com.scpm.inmemory.scpminmemory.userService.registrations.exceptions.UserExceptions;
-import com.scpm.inmemory.scpminmemory.userService.registrations.repos.TeacherRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher.TeacherRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.UserRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.role_repo.RolesRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.studentRepo.StudentsRepository;

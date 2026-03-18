@@ -1,4 +1,4 @@
-package com.scpm.inmemory.scpminmemory.userService.registrations.repos;
+package com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher;
 
 
 

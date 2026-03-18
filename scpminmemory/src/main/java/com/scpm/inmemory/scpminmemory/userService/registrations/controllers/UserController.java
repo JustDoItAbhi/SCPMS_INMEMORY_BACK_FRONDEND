@@ -11,6 +11,7 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.student.Stu
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.student.StudentSingupReqDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.teacherDto.TeacherUserRequestDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.teacherDto.TeacherUserResponseDto;
+import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.ApplicentTeacher;
 import com.scpm.inmemory.scpminmemory.userService.registrations.security.customization.CustomUsersDetails;
 import com.scpm.inmemory.scpminmemory.userService.registrations.services.UserService;
 import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherResponseDto;
@@ -158,8 +159,13 @@ public class UserController {
     public ResponseEntity<TeacherUserResponseDto> setTeacherRole(@RequestBody TeacherUserRequestDto dto){
         return ResponseEntity.ok(userService.approveTeacherSignUp(dto));
     }
+
 @GetMapping("/getApplicetRole/{applicentrole}")
 public ResponseEntity<List<TeacherResponseDto>> getTeacherApplicentRole(@PathVariable("applicentrole")String role){
     return ResponseEntity.ok(userService.getAllApplicaentTeachers(role));
+}
+@GetMapping("/getAllApplicets")
+public ResponseEntity<List<ApplicentTeacher>> getTeacherApplicentRole(){
+    return ResponseEntity.ok(userService.getApplicents());
 }
 }

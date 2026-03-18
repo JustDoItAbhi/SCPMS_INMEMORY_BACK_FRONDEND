@@ -34,6 +34,8 @@ import ApproveTeacher from '../ADMIN/ApproveTeacher';
 import MyLogin from '../logout/MyLogin';
 import CallbackHandler from '../testingLogin/CallbackHandler';
 import LogoutButton from '../logout/LogoutButton';
+import CreatingTeacher from '../user/CreateTeacher';
+import AllApplicantTeachersRequest from '../ADMIN/AllApplicantTeachersRequest';
 
 
 
@@ -74,6 +76,7 @@ function AppContent() {
         <Route path="/GetById/:id" element={<GetById />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/create" element={<CreatingUsers />} />
+        <Route path="/createteacher" element={<CreatingTeacher/>} />
    
         <Route path="/STUDENTSIGNUP" element={<StudentsSignup />} />
         <Route path="/TEACHERSIGNUP" element={<TeachersSignup />} />
@@ -91,6 +94,8 @@ function AppContent() {
         <Route path="/TEACHER-WAIT" element={<TeacherWaitingPage />} />
         <Route path="/CONTACT-US" element={<ContactUs />} />
         <Route path="/logout" element={<LogoutButton />} />
+        <Route path="/AllTeacherApplicents" element={<  AllApplicantTeachersRequest />} />
+      
 
 
                 <Route path="/TEACHER-ROLE" element={

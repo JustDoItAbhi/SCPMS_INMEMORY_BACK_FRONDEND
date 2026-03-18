@@ -264,7 +264,7 @@ useEffect(() => {
                 title={
                     <Space>
                         <MailOutlined />
-                        Submit Topic to Teacher
+                        Submit Topic to Teacher (email server is down please wait for response)
                     </Space>
                 }
                 open={modalVisible}

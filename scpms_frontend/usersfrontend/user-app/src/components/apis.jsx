@@ -345,8 +345,32 @@ export const registerSubjects = async (id, year, subjects) => {
         return response.data;
     } catch (err) {
         console.error("Error submitting TEACHER ROLE:", err.response?.data || err.message);
+        throw new Error(err.response?.data?.message || err.message || "Failed to approve teacher role");
+    }
+}
+export const CreateRoles=async()=>{
+ try {        
+       const response = await axiosInstance.post(`/roles/manuelCreatingRole`);
+        
+        console.log("ROLE CREATES:", response.data);
+        return response.data;
+    } catch (err) {
+        console.error("Error CREATING ROLE:", err.response?.data || err.message);
         
         // Throw the error so it can be caught in the component
-        throw new Error(err.response?.data?.message || err.message || "Failed to approve teacher role");
+        throw new Error(err.response?.data?.message || err.message || "Failed to create roles");
+    }
+}
+export const AllTeacherRequests=async()=>{
+ try {        
+       const response = await axiosInstance.get(`/api/user/getAllApplicets`);
+        
+        console.log("request from app teachers:", response);
+        return response.data;
+    } catch (err) {
+        console.error("Error getting teachers:", err.response?.data || err.message);
+        
+        // Throw the error so it can be caught in the component
+        throw new Error(err.response?.data?.message || err.message || "Failed to get teachers");
     }
 }

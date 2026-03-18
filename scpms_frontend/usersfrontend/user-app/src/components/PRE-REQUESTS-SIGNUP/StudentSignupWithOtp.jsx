@@ -2,16 +2,27 @@ import { Button, Checkbox, Form, Input, Select } from "antd";
 import { useState } from "react"
 import { StudentSendingOtpForSignUP } from "./SIGNUP-APIS/SignUpApis";
 import { useNavigate } from "react-router-dom";
+import { CreateRoles } from "../apis";
 
 
 function StudentSignupWithOtp() {
 const[otp,setOtp]=useState("");
+const[role,setRole]=useState("");
     const naviagte = useNavigate();
 
 
     const onFinish = async (values) => {
+        console.log("vlaues", values);
+        try{
+            const creatingRoles=CreateRoles();
+            console.log("ROLES CREATED",creatingRoles);
+            setRole(creatingRoles);
+        }catch(error){
+            console.log("UNABLE TO CREATE ROLES")
+        }
+
+
         console.log("VALUES",values.email)
-        localStorage.setItem("email",values.email);
         try {
             const signUpStudent = await StudentSendingOtpForSignUP(values);
             console.log("STUDENT OTP ",signUpStudent);
@@ -23,10 +34,11 @@ const[otp,setOtp]=useState("");
                 naviagte("/CHECK-OTP-FOR-SIGNUP");
             }
             if(signUpStudent==="CREATE PROFILE"){
-                naviagte("/create")
+                naviagte("/createTeacher")
             }
             if(signUpStudent==="PLEASE WAIT"){
                 naviagte("/TEACHER-WAIT")
+                // REMEMBER WE HAVE CRATETEACHER FILE 
             }
 
         } catch (err) {

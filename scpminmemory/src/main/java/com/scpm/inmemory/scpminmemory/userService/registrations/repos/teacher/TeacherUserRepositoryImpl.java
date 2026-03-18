@@ -1,4 +1,4 @@
-package com.scpm.inmemory.scpminmemory.userService.registrations.repos;
+package com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher;
 
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.TeachrUser;
 import org.springframework.stereotype.Service;

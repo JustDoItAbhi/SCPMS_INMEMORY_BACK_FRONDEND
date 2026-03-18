@@ -59,6 +59,7 @@ function NavBar() {
             <Link to="/SENDOTP" style={{ color: "white", textDecoration: "none" }}>SEND OTP</Link>
             <Link to="/logout" style={{color: "white", textDecoration: "none"}}>LOGOUT</Link>
             <Link to="/TEACHER-APROVEL" style={{color: "white", textDecoration: "none"}}>APPROVE TEACHR</Link>
+            <Link to="/AllTeacherApplicents" style={{color: "white", textDecoration: "none"}}>ALL TEACHER REQ</Link>
         </nav>
     );
 }

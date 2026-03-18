@@ -9,6 +9,7 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.teacherDto.
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.teacherDto.TeacherUserResponseDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.SignUpRequestDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.UpdateUserDto;
+import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.ApplicentTeacher;
 import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherResponseDto;
 
 import java.util.List;
@@ -36,4 +37,5 @@ public interface UserService {
 
     TeacherUserResponseDto approveTeacherSignUp(TeacherUserRequestDto dto);
     List<TeacherResponseDto> getAllApplicaentTeachers(String applicant_teacher_role);
+    List<ApplicentTeacher>getApplicents();
 }

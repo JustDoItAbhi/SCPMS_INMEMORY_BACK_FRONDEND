@@ -1,9 +1,10 @@
-package com.scpm.inmemory.scpminmemory.userService.registrations.repos;
+package com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher;
 
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.Teachers;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Roles;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Users;
 import com.scpm.inmemory.scpminmemory.userService.registrations.exceptions.exceptionDto.RoleNotFoundException;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.UserRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.role_repo.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -103,6 +104,7 @@ public class TeacherRepositoryImpl implements TeacherRepository{
 
     @Override
     public List<Teachers> findByApplicentRole(String role) {
+
         Optional<Roles> roles=rolesRepository.findByRoleName(role);
         if(roles.isEmpty()){
             throw new RoleNotFoundException("NO SUCH ROLE EXSISTS "+role);

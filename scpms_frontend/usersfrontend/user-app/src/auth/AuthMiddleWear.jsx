@@ -4,11 +4,11 @@ import validateToken from "../components/apps/validateToken";
 // Get the backend URL from environment variables
 const BACKEND_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
 
-console.log("🌐 Backend URL configured:", BACKEND_URL); // Add this for debugging
+console.log("🌐 Backend URL configured:", BACKEND_URL); 
 
 // Create axios instance
 const axiosInstance = axios.create({
-  baseURL: BACKEND_URL, // ✅ Now using the actual value
+  baseURL: BACKEND_URL, 
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

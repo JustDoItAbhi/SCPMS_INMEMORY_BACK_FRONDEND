@@ -9,8 +9,8 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_t
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.model_teachers.Teachers;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.user_model.modals.Users;
 import com.scpm.inmemory.scpminmemory.userService.registrations.exceptions.UserExceptions;
-import com.scpm.inmemory.scpminmemory.userService.registrations.repos.TeacherAndTopicsRepository;
-import com.scpm.inmemory.scpminmemory.userService.registrations.repos.TeacherRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher.TeacherAndTopicsRepository;
+import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacher.TeacherRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.UserRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.role_repo.RolesRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.student_subject_repo.StudentSubjectRepo;

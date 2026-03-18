@@ -87,7 +87,7 @@ const TeacherProfile = () => {
   if (error) {
     return (
       <div className="error-container">
-        <h3>Error</h3>
+        <h3>No Request Yet Please Refresh Page Or Visit Again😟</h3>
         <p>{error}</p>
         <button onClick={fetchTeacherProfile}>Retry</button>
       </div>
