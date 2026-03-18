@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:5173/callback", allowCredentials = "true")
+@CrossOrigin(origins = "https://scpms-inmemory-back-frondend.onrender.com/callback", allowCredentials = "true")
 public class UserController {
     @Autowired
     private UserService userService;
