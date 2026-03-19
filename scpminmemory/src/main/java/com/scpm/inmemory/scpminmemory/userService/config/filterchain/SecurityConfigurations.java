@@ -357,7 +357,7 @@ public class SecurityConfigurations {
                 "http://localhost:5173/callback",
                 "http://127.0.0.1:5173",
                 "https://scpms-inmemory-backend.onrender.com",
-                "https://scpms-inmemory-back-frondend.onrender.com/callback",
+                "https://scpms-in-memory-frontend.onrender.com/callback",
                 "https://oauth.pstmn.io"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
