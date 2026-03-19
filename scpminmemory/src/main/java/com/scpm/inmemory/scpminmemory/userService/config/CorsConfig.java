@@ -20,6 +20,7 @@ public class CorsConfig {
         config.addAllowedOrigin("http://localhost:5173");
         config.addAllowedOrigin("http://127.0.0.1:5173");
         config.addAllowedOrigin("https://scpms-inmemory-back-frondend.onrender.com");
+        config.addAllowedOrigin("https://scpms-inmemory-backend.onrender.com");
         config.addAllowedHeader("*");
         config.addAllowedOrigin("*");
         config.addAllowedMethod("*");
