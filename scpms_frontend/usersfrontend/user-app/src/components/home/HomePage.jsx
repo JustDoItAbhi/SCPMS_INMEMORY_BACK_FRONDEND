@@ -13,10 +13,10 @@ function HomePage() {
     localStorage.removeItem("userEmail")
     localStorage.removeItem("teacherId")
     localStorage.removeItem("id_token");
-        localStorage.removeItem("refresh_token");
-            localStorage.removeItem("roles");
-  
-   
+    localStorage.removeItem("refresh_token");
+    localStorage.removeItem("roles");
+
+
     const handleClick = () => {
         navigate("/mylogin")
     }
