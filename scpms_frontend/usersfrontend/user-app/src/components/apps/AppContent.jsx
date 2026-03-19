@@ -1,9 +1,9 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import OauthLoginForm from '../oauth/OauthLoginForm';
 import SignupForm from '../oauth/SignupForm';
-import Callback from '../oauth/Callback';
+// import Callback from '../oauth/Callback';
 import GetList from '../oauth/GetList';
-import Dashboard from '../oauth/Dashboard';
+// import Dashboard from '../oauth/Dashboard';
 import Users from '../user/Users';
 import CreatingUsers from '../user/CreatingUsers';
 import NavBar from '../user/NavBar';
@@ -62,7 +62,7 @@ function AppContent() {
         <Route path="/callback" element={<CallbackHandler />} />
 
         <Route path="/signup" element={<SignupForm />} />
-        <Route path="/callback" element={<Callback />} />
+        {/* <Route path="/callback" element={<Callback />} /> */}
 
         <Route path="/SEND-OPT-FOR-SIGNUP" element={<StudentSignupWithOtp />} /> 
         <Route path="/CHECK-OTP-FOR-SIGNUP" element={<CheckOtp />} />
@@ -117,14 +117,14 @@ function AppContent() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           }
-        />
+        /> */}
       </Routes>
     </>
   );
