@@ -75,10 +75,9 @@ const login = async (username, password) => {
 
 const fallbackLogin = (username, password) => {
     return new Promise((resolve, reject) => {
-        // Create a form that redirects to a special page that can handle the response
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = `${BASE_URL}/login-form`; // Special endpoint for form submissions
+        form.action = `${BASE_URL}/login-form`; 
         form.style.display = 'none';
 
         // Add inputs...

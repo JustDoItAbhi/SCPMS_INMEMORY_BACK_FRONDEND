@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 
 function MyLogin() {
   const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
-  const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI;
-  // const REDIRECT_URI =`https://scpms-frontend-nrcx.onrender.com/callback`
+  // const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI;
+  const REDIRECT_URI =`https://scpms-inmemory-back-frondend.onrender.com/callback`
   console.log("backend url ",API_BASE_URL);
   console.log("frontend url ",REDIRECT_URI);
 
@@ -21,7 +21,7 @@ function MyLogin() {
       // `&state=xyz123`;
       // `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
     console.log("AUTH URL:", authUrl);
-    window.location.href = authUrl; // triggers redirect
+    window.location.href = authUrl; 
   }, []);
 
   return (

@@ -58,7 +58,6 @@ function AppContent() {
              <Route path="/" element={<HomePage />} />
         <Route path="/final-login" element={<AuthLogin />} />
         <Route path="/mylogin" element={<MyLogin />} />
-        {/* <Route path="/final-login" element={<FinalLoginPage />} /> */}
 
         <Route path="/callback" element={<CallbackHandler />} />
 
