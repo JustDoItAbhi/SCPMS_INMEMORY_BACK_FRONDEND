@@ -1,5 +1,6 @@
 package com.scpm.inmemory.scpminmemory.userService.registrations.controllers;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,6 +18,8 @@ import java.util.Map;
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "https://scpms-inmemory-backend.onrender.com", allowCredentials = "true")
 public class AuthController {
+    @Value("${spring.backend.url}")
+    String backendUrl;
 
     @PostMapping("/oauth2/token")
     public ResponseEntity<?> exchangeCode(@RequestBody Map<String, String> body) {
@@ -48,7 +51,7 @@ public class AuthController {
 
         try {
             ResponseEntity<Map> response = restTemplate.postForEntity(
-                    "http://localhost:8080/oauth2/token",
+                    backendUrl+"/oauth2/token",
                     request,
                     Map.class
             );

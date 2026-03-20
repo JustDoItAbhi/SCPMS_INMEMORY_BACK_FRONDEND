@@ -1,10 +1,11 @@
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacher\TeacherAndTopicsRepository.class
 com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherTopicResponseDto.class
-com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherRepository.class
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_topic_repo\StudentTopicRepoImpl.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacher\TeacherRepository.class
 com\scpm\inmemory\scpminmemory\userService\config\SystemBeans.class
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\role_repo\RolesRepository.class
-com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherRepositoryImpl.class
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\role_repo\RoleRepositoryImpl.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacheruser_applicent\TeachrUserApplicentRepoImpl.class
 com\scpm\inmemory\scpminmemory\userService\registrations\controllers\RoleController.class
 com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\TeachrUser.class
 com\scpm\inmemory\scpminmemory\userService\registrations\services\UserServiceImpl.class
@@ -17,6 +18,7 @@ com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\mod
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\RolesRequestDto.class
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\RoleResponseDto.class
 com\scpm\inmemory\scpminmemory\userService\registrations\controllers\UserController.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacher\TeacherRepositoryImpl.class
 com\scpm\inmemory\scpminmemory\userService\registrations\controllers\TokenController.class
 com\scpm\inmemory\scpminmemory\userService\students\mapper\SubjectAndStudentMapper.class
 com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student\Students.class
@@ -33,15 +35,14 @@ com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TopicForTeacher
 com\scpm\inmemory\scpminmemory\userService\config\filterchain\SecurityConfigurations$1.class
 com\scpm\inmemory\scpminmemory\userService\teachers\controller\TeacherController.class
 com\scpm\inmemory\scpminmemory\userService\registrations\email\MailConfig.class
-com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherAndTopicsRepositoryImpl.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacher\TeacherUserRepository.class
 com\scpm\inmemory\scpminmemory\userService\teachers\teachermappers\TeacherAndTopicMapper.class
 com\scpm\inmemory\scpminmemory\userService\registrations\entities\model_teachers\TeacherAndTopics.class
 com\scpm\inmemory\scpminmemory\userService\registrations\services\OTPService$OTPDetails.class
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\UpdateUserDto.class
-com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherUserRepositoryImpl.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacher\TeacherAndTopicsRepositoryImpl.class
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\student\StudentSingupReqDto.class
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\teacherDto\TeacherUserRequestDto.class
-com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherUserRepository.class
 com\scpm\inmemory\scpminmemory\userService\registrations\entities\Subjects.class
 com\scpm\inmemory\scpminmemory\userService\registrations\exceptions\exceptionDto\ExceptionalResponseDto.class
 com\scpm\inmemory\scpminmemory\userService\subjects\servie\SubjectServiceImpl.class
@@ -65,6 +66,7 @@ com\scpm\inmemory\scpminmemory\userService\registrations\repos\subject_repo\Subj
 com\scpm\inmemory\scpminmemory\userService\registrations\services\RoleServicesImpl.class
 com\scpm\inmemory\scpminmemory\userService\students\stDto\TopicResponeDto.class
 com\scpm\inmemory\scpminmemory\userService\students\stDto\StudentsResponseDto.class
+com\scpm\inmemory\scpminmemory\userService\registrations\entities\model_teachers\ApplicentTeacher.class
 com\scpm\inmemory\scpminmemory\userService\registrations\services\RoleService.class
 com\scpm\inmemory\scpminmemory\userService\registrations\controllers\AuthController.class
 com\scpm\inmemory\scpminmemory\userService\registrations\email\EmailService.class
@@ -79,6 +81,7 @@ com\scpm\inmemory\scpminmemory\userService\registrations\entities\modals_student
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\UserRepository.class
 com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\TeacherTopicRequestDto.class
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\student_subject_repo\StudentSubjectRepo.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacher\TeacherUserRepositoryImpl.class
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\UserRepositoryImpl.class
 com\scpm\inmemory\scpminmemory\userService\students\service\StudentsServicesImpl.class
 com\scpm\inmemory\scpminmemory\userService\registrations\services\UserService.class
@@ -95,9 +98,9 @@ com\scpm\inmemory\scpminmemory\ScpminmemoryApplication.class
 com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomJwtAuthenticationConverter.class
 com\scpm\inmemory\scpminmemory\userService\registrations\entities\user_model\modals\StudentOtp.class
 com\scpm\inmemory\scpminmemory\userService\teachers\teachersDtos\UpdateTeacherResponeDto.class
-com\scpm\inmemory\scpminmemory\userService\registrations\repos\TeacherAndTopicsRepository.class
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\reponseDtos\UserResponseDto.class
 com\scpm\inmemory\scpminmemory\userService\registrations\repos\subject_repo\SubjectRepository.class
+com\scpm\inmemory\scpminmemory\userService\registrations\repos\teacheruser_applicent\TeachrUserApplicentRepo.class
 com\scpm\inmemory\scpminmemory\userService\registrations\dtos\user_dto\ResetPasswordReqDto.class
 com\scpm\inmemory\scpminmemory\userService\registrations\security\customization\CustomiseGrandAuthority.class
 com\scpm\inmemory\scpminmemory\userService\students\StudentsMapper.class

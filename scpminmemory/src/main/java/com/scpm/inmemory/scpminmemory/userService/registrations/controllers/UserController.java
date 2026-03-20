@@ -83,7 +83,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
     @PostMapping("/Login")
-    public ResponseEntity<LoginResponseDto> createUser(@RequestBody LoginRequestDto dto){
+    public ResponseEntity<LoginResponseDto> loginUser(@RequestBody LoginRequestDto dto){
         return ResponseEntity.ok(userService.login(dto.getUserEmail(), dto.getPassword()));
     }
     @GetMapping("/getUserById/{id}")
