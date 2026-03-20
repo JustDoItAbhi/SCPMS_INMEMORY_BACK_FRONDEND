@@ -22,13 +22,13 @@ const InMemoryChat = ({ currentUserId, otherUserId, otherUserName }) => {
     const fetchMessages = async () => {
         try {
             const response = await axios.get(
-                `${API_BASE_URL}/api/messages/conversation/${currentUserId}/${otherUserId}`
+                `${API_BASE_URL}/api/user/messages/conversation/${currentUserId}/${otherUserId}`
             );
             setMessages(response.data);
             
             // Mark as read if there are messages
             if (response.data.length > 0) {
-                await axios.put(`${API_BASE_URL}/api/messages/mark-read/${currentUserId}`);
+                await axios.put(`${API_BASE_URL}/api/user/messages/mark-read/${currentUserId}`);
             }
         } catch (error) {
             console.error('Error fetching messages:', error);
