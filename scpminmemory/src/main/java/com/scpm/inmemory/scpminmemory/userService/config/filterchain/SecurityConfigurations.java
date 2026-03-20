@@ -200,7 +200,7 @@ public class SecurityConfigurations {
                                 .requestMatchers("/api/user/getApplicetRole/{applicentrole}").permitAll()
                                 .requestMatchers("/api/user/confirmTeacherRole").permitAll()
                                 .requestMatchers("/api/user/getAllApplicets").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
