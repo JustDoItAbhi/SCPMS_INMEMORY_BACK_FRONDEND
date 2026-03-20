@@ -149,7 +149,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint(  "https://scpms-in-memory-frontend.onrender.com/final-login"),
+                                new LoginUrlAuthenticationEntryPoint(  "https://scpms-in-memory-frontend-ny3p.onrender.com/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -209,7 +209,7 @@ public class SecurityConfigurations {
                 )
 
                 .formLogin(form -> form
-                        .loginPage("https://scpms-in-memory-frontend.onrender.com/final-login")
+                        .loginPage("https://scpms-in-memory-frontend-ny3p.onrender.com/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
@@ -259,8 +259,8 @@ public class SecurityConfigurations {
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .redirectUri(redirectUri)
                 .postLogoutRedirectUri(postLogoutRedirectUri)
-                .postLogoutRedirectUri("https://scpms-in-memory-frontend.onrender.com")
-                .redirectUri("https://scpms-in-memory-frontend.onrender.com/callback")
+                .postLogoutRedirectUri("https://scpms-in-memory-frontend-ny3p.onrender.com")
+                .redirectUri("https://scpms-in-memory-frontend-ny3p.onrender.com/callback")
 //                .postLogoutRedirectUri("http://localhost:5173")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
