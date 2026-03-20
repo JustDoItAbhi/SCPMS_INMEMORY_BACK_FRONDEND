@@ -6,7 +6,9 @@ const OauthLogin = () => {
     useEffect(() => {
   // Check if backend is accessible
   console.log("1ST REQUEST")
-  fetch('http://localhost:8080/')
+    const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
+  const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI;
+  fetch(API_BASE_URL)
     .then(response => {
       if (response.ok) {
         console.log('Backend server is running');
@@ -24,7 +26,7 @@ const OauthLogin = () => {
     const params = new URLSearchParams({
       response_type: "code",
       client_id: "abhi",
-      redirect_uri: "http://localhost:5173/callback",
+      redirect_uri: {REDIRECT_URI},
    scope: "openid profile",
       // Remove client_secret from authorization request
     });

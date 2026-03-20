@@ -1,8 +1,11 @@
 import React from 'react';
 
 const OauthLoginForm = () => {
-//     const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost:8080';
-//   const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI ||"http://localhost:5173/callback";
+  const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
+  const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI;
+
+//     const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL 
+//   const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI 
 // // const URL= `${API_BASE_URL}/oauth2/authorize?response_type=code` +
 //       `&client_id=${clientID}` +
 //       `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
