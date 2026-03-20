@@ -345,14 +345,14 @@ localStorage.setItem('teacherSubject', subject);
                 )}
 
                 {/* Debug Info */}
-                <Card title="Debug Information" className="debug-card" size="small">
+                {/* <Card title="Debug Information" className="debug-card" size="small">
                     <div className="debug-info">
                         <p><strong>User ID from localStorage:</strong> {userId || 'Not found'}</p>
                         <p><strong>Selected Year:</strong> {selectedYear || 'Not selected'}</p>
                         <p><strong>Selected Subject:</strong> {selectedSubject || 'Not selected'}</p>
                         <p><strong>Teacher data loaded:</strong> {teacher ? 'Yes' : 'No'}</p>
                     </div>
-                </Card>
+                </Card> */}
             </Card>
         </div>
     );

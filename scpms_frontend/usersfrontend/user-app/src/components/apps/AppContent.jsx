@@ -36,6 +36,7 @@ import CallbackHandler from '../testingLogin/CallbackHandler';
 import LogoutButton from '../logout/LogoutButton';
 import CreatingTeacher from '../user/CreateTeacher';
 import AllApplicantTeachersRequest from '../ADMIN/AllApplicantTeachersRequest';
+import InMemoryChat from '../chat/InMemoryChat ';
 
 
 
@@ -67,7 +68,7 @@ function AppContent() {
         <Route path="/SEND-OPT-FOR-SIGNUP" element={<StudentSignupWithOtp />} /> 
         <Route path="/CHECK-OTP-FOR-SIGNUP" element={<CheckOtp />} />
 
-        
+           <Route path="/chat" element={<InMemoryChat />} />
 
 
         <Route path="/RESETPASSWORD" element={<ResetPassword />} />

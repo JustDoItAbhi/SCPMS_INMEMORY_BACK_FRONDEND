@@ -37,6 +37,8 @@ public class UserController {
     private UserService userService;
 
 
+
+
     @GetMapping("/me")
     public ResponseEntity<?> getCurrentUserDetails(Authentication authentication) {
         if (authentication != null && authentication.isAuthenticated() &&

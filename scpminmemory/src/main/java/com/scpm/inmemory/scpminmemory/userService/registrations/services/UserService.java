@@ -38,4 +38,5 @@ public interface UserService {
     TeacherUserResponseDto approveTeacherSignUp(TeacherUserRequestDto dto);
     List<TeacherResponseDto> getAllApplicaentTeachers(String applicant_teacher_role);
     List<ApplicentTeacher>getApplicents();
+
 }
