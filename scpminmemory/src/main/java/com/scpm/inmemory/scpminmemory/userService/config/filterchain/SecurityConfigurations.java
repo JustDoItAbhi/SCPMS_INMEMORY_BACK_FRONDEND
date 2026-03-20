@@ -149,7 +149,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint(  "/final-login"),
+                                new LoginUrlAuthenticationEntryPoint(  "https://scpms-in-memory-frontend.onrender.com/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -209,7 +209,7 @@ public class SecurityConfigurations {
                 )
 
                 .formLogin(form -> form
-                        .loginPage("/final-login")
+                        .loginPage("https://scpms-in-memory-frontend.onrender.com/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
