@@ -209,7 +209,6 @@ public class SecurityConfigurations {
                 )
 
                 .formLogin(form -> form
-//                        .loginPage("http://localhost:5173/final-login")
                         .loginPage(frontendUrl+"/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
@@ -361,7 +360,7 @@ public class SecurityConfigurations {
                 "http://localhost:5173/callback",
                 "http://127.0.0.1:5173",
                 "https://scpms-inmemory-backend.onrender.com",
-                "https://scpms-in-memory-frontend.onrender.com/callback",
+                "https://scpms-in-memory-frontend.onrender.com",
                 "https://oauth.pstmn.io"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));

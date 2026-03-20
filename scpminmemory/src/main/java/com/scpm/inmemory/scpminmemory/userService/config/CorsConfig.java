@@ -21,7 +21,6 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:5173");
         config.addAllowedOrigin("http://127.0.0.1:5173");
-        config.addAllowedOrigin(backendUrl);
         config.addAllowedOrigin("https://scpms-inmemory-backend.onrender.com");
         config.addAllowedHeader("*");
         config.addAllowedOrigin("*");
@@ -39,7 +38,7 @@ public class CorsConfig {
                 registry.addMapping("/oauth2/token")
                         .allowedOrigins("http://localhost:5173") // your React app
                         .allowedOrigins("https://scpms-in-memory-frontend.onrender.com")
-                        .allowedOrigins(backendUrl)
+                        .allowedOrigins("https://scpms-inmemory-backend.onrender.com")
                         .allowedMethods("POST", "GET", "OPTIONS")
                         .allowCredentials(true);
             }
