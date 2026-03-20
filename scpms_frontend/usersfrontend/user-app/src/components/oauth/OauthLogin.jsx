@@ -8,6 +8,8 @@ const OauthLogin = () => {
   console.log("1ST REQUEST")
     const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
   const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI;
+  console.log("BASE URL FROM OUTHLOGIN PAGE  ",API_BASE_URL)
+  console.log("REDIRECT URL FROM OUTH LOGIN ",REDIRECT_URI)
   fetch(API_BASE_URL)
     .then(response => {
       if (response.ok) {

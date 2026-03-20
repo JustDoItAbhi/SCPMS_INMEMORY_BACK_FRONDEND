@@ -12,6 +12,8 @@ const CallbackHandler = () => {
 
       const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL 
   const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI 
+  console.log("BASE URL FROM CALLBACK HANDLER ",API_BASE_URL)
+  console.log("REDIRECT URL FROM CALLBACK HANDLER ",REDIRECT_URI)
 
 
   useEffect(() => {

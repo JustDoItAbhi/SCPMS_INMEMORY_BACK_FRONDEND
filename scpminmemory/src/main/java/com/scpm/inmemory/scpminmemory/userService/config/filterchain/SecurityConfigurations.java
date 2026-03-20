@@ -244,12 +244,12 @@ public class SecurityConfigurations {
     }
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
-        System.out.println("REDIRECT URI= "+redirectUri);
-        System.out.println("PORT URI= "+postLogoutRedirectUri);
-        System.out.println("CLIENT ID= "+clientId);
-        System.out.println("client password = " +clientPassword);
-        System.out.println("FRONTEND URL = " +frontendUrl);
-        System.out.println("BACKEND URL = " +backendUrl);
+//        System.out.println("REDIRECT URI= "+redirectUri);
+//        System.out.println("PORT URI= "+postLogoutRedirectUri);
+//        System.out.println("CLIENT ID= "+clientId);
+//        System.out.println("client password = " +clientPassword);
+//        System.out.println("FRONTEND URL = " +frontendUrl);
+//        System.out.println("BACKEND URL = " +backendUrl);
         BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId(clientId)
@@ -360,7 +360,7 @@ public class SecurityConfigurations {
                 "http://localhost:5173/callback",
                 "http://127.0.0.1:5173",
                 "https://scpms-inmemory-backend.onrender.com",
-                "https://scpms-in-memory-frontend.onrender.com",
+                "https://scpms-in-memory-frontend-ny3p.onrender.com",
                 "https://oauth.pstmn.io"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 function MyLogin() {
   const API_BASE_URL = import.meta.env.VITE_DIRECT_BACKEND_URL;
-  const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI || 'https://scpms-in-memory-frontend.onrender.com/callback';
+  const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI || 'https://scpms-in-memory-frontend-ny3p.onrender.com/callback';
   // const REDIRECT_URI =`https://scpms-in-memory-frontend.onrender.com/callback`
   console.log("backend url ",API_BASE_URL);
   console.log("frontend url ",REDIRECT_URI);
