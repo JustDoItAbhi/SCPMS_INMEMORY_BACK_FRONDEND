@@ -208,7 +208,7 @@ public class SecurityConfigurations {
 
                 .formLogin(form -> form
 //                        .loginPage("https://scpms-frontend-nrcx.onrender.com/final-login")
-                        .loginPage(url+ "/final-login")
+                        .loginPage("https://scpms-inmemory-backend.onrender.com/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
