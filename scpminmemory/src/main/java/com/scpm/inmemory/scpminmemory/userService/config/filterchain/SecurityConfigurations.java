@@ -74,8 +74,11 @@ public class SecurityConfigurations {
     String clientPassword;
     @Value("${spring.registerClient.redirectUri}")
     String redirectUri;
-    @Value("${spring.base.url}")
-    String url;
+    @Value("${spring.backend.url}")
+    String backendUrl;
+
+    @Value("${spring.frontend.url}")
+    String frontendUrl;
 
     @Value("${spring.registerClient.postLogoutRedirectUri}")
     String postLogoutRedirectUri;
@@ -146,7 +149,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint(  url+"/final-login"),
+                                new LoginUrlAuthenticationEntryPoint(  "/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -174,7 +177,6 @@ public class SecurityConfigurations {
                                 "/oauth2/**",
                                 "/api/user/me",
                                 "/.well-known/**",
-//                                "/api/user/Login",
                                 "/error",
                                 "/client/register",
                                 "/client/updateRegisterClient/**",
@@ -207,8 +209,8 @@ public class SecurityConfigurations {
                 )
 
                 .formLogin(form -> form
-//                        .loginPage("https://scpms-frontend-nrcx.onrender.com/final-login")
-                        .loginPage("https://scpms-inmemory-backend.onrender.com/final-login")
+//                        .loginPage("http://localhost:5173/final-login")
+                        .loginPage("/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
@@ -256,7 +258,9 @@ public class SecurityConfigurations {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .redirectUri(redirectUri)
+                .redirectUri("http://localhost:5173/callback")
                 .postLogoutRedirectUri(postLogoutRedirectUri)
+                .postLogoutRedirectUri("http://localhost:5173")
 //                .redirectUri("http://localhost:5173/callback")
 //                .postLogoutRedirectUri("http://localhost:5173")
                 .scope(OidcScopes.OPENID)
