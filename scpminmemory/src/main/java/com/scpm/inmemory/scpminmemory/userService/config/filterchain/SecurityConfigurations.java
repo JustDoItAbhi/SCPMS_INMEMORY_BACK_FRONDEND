@@ -149,7 +149,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint(  "http://localhost:5173/final-login"),
+                                new LoginUrlAuthenticationEntryPoint(  frontendUrl+"final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -210,7 +210,7 @@ public class SecurityConfigurations {
 
                 .formLogin(form -> form
 //                        .loginPage("http://localhost:5173/final-login")
-                        .loginPage("http://localhost:5173/final-login")
+                        .loginPage(frontendUrl+"/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
@@ -260,8 +260,8 @@ public class SecurityConfigurations {
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .redirectUri(redirectUri)
                 .postLogoutRedirectUri(postLogoutRedirectUri)
-                .postLogoutRedirectUri("http://localhost:5173")
-                .redirectUri("http://localhost:5173/callback")
+                .postLogoutRedirectUri("https://scpms-in-memory-frontend.onrender.com")
+                .redirectUri("https://scpms-in-memory-frontend.onrender.com/callback")
 //                .postLogoutRedirectUri("http://localhost:5173")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)

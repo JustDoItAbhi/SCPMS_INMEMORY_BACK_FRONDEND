@@ -16,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "https://scpms-inmemory-backend.onrender.com", allowCredentials = "true")
+@CrossOrigin(origins = "${spring.backend.url}", allowCredentials = "true")
 public class AuthController {
     @Value("${spring.backend.url}")
     String backendUrl;

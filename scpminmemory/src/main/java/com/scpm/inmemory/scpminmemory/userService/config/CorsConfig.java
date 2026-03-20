@@ -1,5 +1,6 @@
 package com.scpm.inmemory.scpminmemory.userService.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -10,7 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig {
-
+    @Value("${spring.backend.url}")
+    private String backendUrl;
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -19,7 +21,7 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:5173");
         config.addAllowedOrigin("http://127.0.0.1:5173");
-        config.addAllowedOrigin("https://scpms-inmemory-back-frondend.onrender.com");
+        config.addAllowedOrigin(backendUrl);
         config.addAllowedOrigin("https://scpms-inmemory-backend.onrender.com");
         config.addAllowedHeader("*");
         config.addAllowedOrigin("*");
@@ -36,7 +38,8 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/oauth2/token")
                         .allowedOrigins("http://localhost:5173") // your React app
-                        .allowedOrigins("https://scpms-frontend-nrcx.onrender.com")
+                        .allowedOrigins("https://scpms-in-memory-frontend.onrender.com")
+                        .allowedOrigins(backendUrl)
                         .allowedMethods("POST", "GET", "OPTIONS")
                         .allowCredentials(true);
             }

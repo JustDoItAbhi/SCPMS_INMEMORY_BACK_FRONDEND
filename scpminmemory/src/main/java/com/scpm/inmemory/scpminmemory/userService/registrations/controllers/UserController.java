@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "https://scpms-inmemory-backend.onrender.com", allowCredentials = "true")
+@CrossOrigin(origins = "${spring.backend.url}", allowCredentials = "true")
 public class UserController {
     @Autowired
     private UserService userService;
