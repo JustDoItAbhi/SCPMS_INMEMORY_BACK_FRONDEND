@@ -210,7 +210,7 @@ public class SecurityConfigurations {
 
                 .formLogin(form -> form
 //                        .loginPage("http://localhost:5173/final-login")
-                        .loginPage("http://localhost:5173/final-login")
+                        .loginPage("/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
