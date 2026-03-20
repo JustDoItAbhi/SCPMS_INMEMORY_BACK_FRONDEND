@@ -51,7 +51,7 @@ public class AuthController {
 
         try {
             ResponseEntity<Map> response = restTemplate.postForEntity(
-                    backendUrl+"/oauth2/token",
+                    "https://scpms-inmemory-backend.onrender.com/oauth2/token",
                     request,
                     Map.class
             );

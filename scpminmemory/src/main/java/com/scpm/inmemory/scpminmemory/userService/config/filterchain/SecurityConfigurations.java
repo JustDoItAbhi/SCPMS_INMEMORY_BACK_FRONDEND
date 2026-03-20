@@ -149,7 +149,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint(  frontendUrl+"/final-login"),
+                                new LoginUrlAuthenticationEntryPoint(  "http://localhost:5173/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -210,7 +210,7 @@ public class SecurityConfigurations {
 
                 .formLogin(form -> form
 //                        .loginPage("http://localhost:5173/final-login")
-                        .loginPage(frontendUrl+"/final-login")
+                        .loginPage("http://localhost:5173/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
