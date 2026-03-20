@@ -249,7 +249,8 @@ public class SecurityConfigurations {
         System.out.println("PORT URI= "+postLogoutRedirectUri);
         System.out.println("CLIENT ID= "+clientId);
         System.out.println("client password = " +clientPassword);
-
+        System.out.println("FRONTEND URL = " +frontendUrl);
+        System.out.println("BACKEND URL = " +backendUrl);
         BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId(clientId)
@@ -258,10 +259,9 @@ public class SecurityConfigurations {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .redirectUri(redirectUri)
-                .redirectUri("http://localhost:5173/callback")
                 .postLogoutRedirectUri(postLogoutRedirectUri)
                 .postLogoutRedirectUri("http://localhost:5173")
-//                .redirectUri("http://localhost:5173/callback")
+                .redirectUri("http://localhost:5173/callback")
 //                .postLogoutRedirectUri("http://localhost:5173")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
