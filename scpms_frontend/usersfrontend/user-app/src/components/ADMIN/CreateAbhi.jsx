@@ -11,7 +11,7 @@ function CreateAbhi(){
         }
     }
 useEffect(()=>{
-    abhi();
+    getAdmin();
 },[])
 
     return(

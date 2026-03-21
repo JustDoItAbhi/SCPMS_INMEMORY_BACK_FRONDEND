@@ -76,10 +76,8 @@ public class SecurityConfigurations {
     String redirectUri;
     @Value("${spring.backend.url}")
     String backendUrl;
-
     @Value("${spring.frontend.url}")
     String frontendUrl;
-
     @Value("${spring.registerClient.postLogoutRedirectUri}")
     String postLogoutRedirectUri;
 
