@@ -73,9 +73,7 @@ public class SecurityConfigurations {
     @Value("${spring.registerClient.password}")
     String clientPassword;
     @Value("${spring.registerClient.redirectUri}")
-    String redirectUri;
-    @Value("${spring.backend.url}")
-    String backendUrl;
+    String callbackUri;
     @Value("${spring.frontend.url}")
     String frontendUrl;
     @Value("${spring.registerClient.postLogoutRedirectUri}")
@@ -147,7 +145,7 @@ public class SecurityConfigurations {
                 // authorization endpoint
                 .exceptionHandling((exceptions) -> exceptions
                         .defaultAuthenticationEntryPointFor(
-                                new LoginUrlAuthenticationEntryPoint(  "https://scpms-in-memory-frontend-ny3p.onrender.com/final-login"),
+                                new LoginUrlAuthenticationEntryPoint(  frontendUrl+"/final-login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
                 );
@@ -200,6 +198,7 @@ public class SecurityConfigurations {
                                 .requestMatchers("/api/user/getApplicetRole/{applicentrole}").permitAll()
                                 .requestMatchers("/api/user/confirmTeacherRole").permitAll()
                                 .requestMatchers("/api/user/getAllApplicets").permitAll()
+                        .requestMatchers("/api/user/api/user/abhi","/api/subject/addSubjectsInMem").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
@@ -207,7 +206,7 @@ public class SecurityConfigurations {
                 )
 
                 .formLogin(form -> form
-                        .loginPage("https://scpms-in-memory-frontend-ny3p.onrender.com/final-login")
+                        .loginPage(frontendUrl+"/final-login")
                         .loginProcessingUrl("/login")
                         .permitAll()
                 )
@@ -242,12 +241,7 @@ public class SecurityConfigurations {
     }
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
-//        System.out.println("REDIRECT URI= "+redirectUri);
-//        System.out.println("PORT URI= "+postLogoutRedirectUri);
-//        System.out.println("CLIENT ID= "+clientId);
-//        System.out.println("client password = " +clientPassword);
-//        System.out.println("FRONTEND URL = " +frontendUrl);
-//        System.out.println("BACKEND URL = " +backendUrl);
+
         BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId(clientId)
@@ -255,10 +249,10 @@ public class SecurityConfigurations {
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                .redirectUri(redirectUri)
+                .redirectUri(callbackUri)
                 .postLogoutRedirectUri(postLogoutRedirectUri)
-                .postLogoutRedirectUri("https://scpms-in-memory-frontend-ny3p.onrender.com")
-                .redirectUri("https://scpms-in-memory-frontend-ny3p.onrender.com/callback")
+//                .postLogoutRedirectUri("https://scpms-in-memory-frontend-ny3p.onrender.com")
+//                .redirectUri("https://scpms-in-memory-frontend-ny3p.onrender.com/callback")
 //                .postLogoutRedirectUri("http://localhost:5173")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)

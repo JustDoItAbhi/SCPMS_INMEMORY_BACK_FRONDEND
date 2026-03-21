@@ -10,9 +10,9 @@ function CreateAbhi(){
             console.log("UNABLE TO GET ABI",error.message)
         }
     }
-useEffect(()=>{
-    getAdmin();
-},[])
+// useEffect(()=>{
+//     getAdmin();
+// },[])
 
     return(
         <>
