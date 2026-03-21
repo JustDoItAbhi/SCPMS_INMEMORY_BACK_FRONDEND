@@ -81,11 +81,11 @@ const navigate=useNavigate();
                 <Form.Item
                     label="Role"
                     name="rolesList"
-                    initialValue="STUDENT" 
+                    initialValue="ADMIN" 
                     rules={[{required:true,message:"Please select a role"}]}
                 >
                     <Select placeholder ="Select a role">
-                        <Select.Option value="STUDENT">ADMIN</Select.Option>
+                        <Select.Option value="ADMIN">ADMIN</Select.Option>
                         {/* <Select.Option value="TEACHER">TEACHER</Select.Option> */}
                 
                     </Select>
