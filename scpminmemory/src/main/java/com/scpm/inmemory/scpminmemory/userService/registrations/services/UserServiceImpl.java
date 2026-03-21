@@ -373,6 +373,7 @@ return responseDtos;
         role.setRoleName("ADMIN");
         rolesList.add(role);
         users.setRolesList(rolesList);
+        userRepository.save(users);
         return "BE ALERT BOSS IS HERE";
     }
 
