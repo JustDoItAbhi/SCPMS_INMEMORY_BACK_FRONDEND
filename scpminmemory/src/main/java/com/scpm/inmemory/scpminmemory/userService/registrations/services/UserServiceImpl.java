@@ -360,6 +360,10 @@ return responseDtos;
 
     @Override
     public String createAdmin() {
+        Optional<Users> exsistingUser=userRepository.findByEmail("abhi@gmail.com");
+        if(exsistingUser.isPresent()){
+            return "BOSS ALEADY HERE "+exsistingUser.get().getEmail();
+        }
         Users users=new Users();
         users.setName("arvi");
         users.setPassword("1234");
@@ -371,13 +375,8 @@ return responseDtos;
         }
         users.setRolesList(rolesList);
         users.setAddress("LVIV");
-        Optional<Users> exsistingUser=userRepository.findByEmail("abhi@gmail.com");
-        if(exsistingUser.isPresent()){
-            throw new UserExceptions("YOU ARE EXISTS");
-        }else {
             userRepository.save(users);
-        }
-        return "done";
+        return "BE ALERT BOSS IS HERE";
     }
 
 
