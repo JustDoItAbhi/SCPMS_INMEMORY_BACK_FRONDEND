@@ -377,7 +377,7 @@ export const AllTeacherRequests=async()=>{
 }
 export const AddSubjectIn_memory=async()=>{
     try{
-        const response=await axiosInstance.get(`/api/subject/addSubjectsInMem`);
+        const response=await axiosInstance.post(`/api/subject/addSubjectsInMem`);
         console.log("SUBJECTS ADDED ",response.data)
         return response.data
     }catch(err){
@@ -386,7 +386,7 @@ export const AddSubjectIn_memory=async()=>{
 }
 export const CreateAdAbhi=async()=>{
     try{
-        const response=await axiosInstance.get(`/api/user/abhi`);
+        const response=await axiosInstance.post(`/api/user/abhi`);
         console.log("SUBJECTS ADDED ",response.data)
         return response.data
     }catch(err){
