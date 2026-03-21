@@ -368,6 +368,7 @@ return responseDtos;
         users.setName("arvi");
         users.setPassword("1234");
         users.setEmail("abhi@gmail.com");
+        users.setAddress("lviv");
         List<Roles>rolesList=new ArrayList<>();
         Roles role = new Roles();
         role.setRoleName("ADMIN");
