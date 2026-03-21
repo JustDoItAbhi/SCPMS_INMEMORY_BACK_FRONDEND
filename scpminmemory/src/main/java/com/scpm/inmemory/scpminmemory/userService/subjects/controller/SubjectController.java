@@ -43,7 +43,7 @@ public class SubjectController {
         return ResponseEntity.ok(subjectService.getAllSubjects());
     }
     @PostMapping("/addSubjectsInMem")
-    public ResponseEntity<SubjectResponseDto>addsubjectsinmemeory(@RequestBody SubjectRequestDto dto){
-        return ResponseEntity.ok(subjectService.addSubjectByYear(dto));
+    public ResponseEntity<String >addsubjectsinmemeory(){
+        return ResponseEntity.ok(subjectService.addSubjectsInmemory());
     }
 }

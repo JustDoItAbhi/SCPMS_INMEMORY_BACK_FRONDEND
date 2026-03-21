@@ -121,9 +121,12 @@ public class SubjectServiceImpl implements SubjectService{
     }
 
     @Override
-    public String addSubjectsInmemory(SubjectRequestDto dto) {
+    public String addSubjectsInmemory() {
         // Create a map of course year to list of subjects
         Map<String, List<String>> subjectsByYear = new HashMap<>();
+        if(!subjectsByYear.isEmpty()){
+            return "old record of subjects loaded";
+        }
 
         // 1st Year Subjects
         subjectsByYear.put("1st", Arrays.asList(
@@ -229,6 +232,7 @@ public class SubjectServiceImpl implements SubjectService{
                 Subjects subject = new Subjects();
                 subject.setSubject(subjectName);
                 subject.setCourseYear(courseYear); // Assuming Subjects entity has a courseYear field
+                System.out.println("SUBJECTS "+subject.getSubject()+"  👍👍");
                 subjectRepository.save(subject);
             }
         }

@@ -15,6 +15,6 @@ public interface SubjectService {
     SubjectResponseDto updateSubject(long id, SubjectRequestDto dto);
     List<SubjectResponseDto> transferAllListOfStubjecsFromCsvFile(MultipartFile file) throws IOException;
     List<SubjectResponseDto> getAllSubjects() ;
-    String addSubjectsInmemory(SubjectRequestDto dto);
+    String addSubjectsInmemory();
 
 }
