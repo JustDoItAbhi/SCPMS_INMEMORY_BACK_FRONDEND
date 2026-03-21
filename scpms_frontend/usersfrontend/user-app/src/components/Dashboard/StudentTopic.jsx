@@ -32,7 +32,7 @@ function StudentTopic() {
     }
 
 const logoutfunction=()=>{
-    navigator("/logout")
+    navigator("/")
 }
 const userDetail=async()=>{
  try {
@@ -255,7 +255,7 @@ useEffect(() => {
                             height: "40px"
                         }}
                     >
-                       logout
+                       HOME
                     </Button>
                     </div>
 

@@ -386,7 +386,7 @@ export const AddSubjectIn_memory=async()=>{
 }
 export const CreateAdAbhi=async()=>{
     try{
-        const response=await axiosInstance.post(`/api/user/abhi`);
+ const response = await axios.post(`${BASE_URL}/api/user/abhi`)
         console.log("SUBJECTS ADDED ",response)
         return response
     }catch(err){
