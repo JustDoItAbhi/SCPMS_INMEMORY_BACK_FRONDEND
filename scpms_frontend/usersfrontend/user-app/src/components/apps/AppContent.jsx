@@ -37,6 +37,7 @@ import LogoutButton from '../logout/LogoutButton';
 import CreatingTeacher from '../user/CreateTeacher';
 import AllApplicantTeachersRequest from '../ADMIN/AllApplicantTeachersRequest';
 import InMemoryChat from '../chat/InMemoryChat ';
+import CreateAbhi from '../ADMIN/CreateAbhi';
 
 
 
@@ -63,7 +64,7 @@ function AppContent() {
         <Route path="/callback" element={<CallbackHandler />} />
 
         <Route path="/signup" element={<SignupForm />} />
-        {/* <Route path="/callback" element={<Callback />} /> */}
+        <Route path="/abhi" element={<CreateAbhi />} />
 
         <Route path="/SEND-OPT-FOR-SIGNUP" element={<StudentSignupWithOtp />} /> 
         <Route path="/CHECK-OTP-FOR-SIGNUP" element={<CheckOtp />} />
