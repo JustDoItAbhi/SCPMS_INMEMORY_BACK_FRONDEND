@@ -8,7 +8,7 @@ function CreateAbhi(){
 
     const getAdmin=async()=>{
         try{
- const response = await axios.post(`${API_BASE_URL}/api/user/abhi`)
+ const response = await CreateAdAbhi();
             console.log("check ABHI",response)
         }catch(error){
             console.log("UNABLE TO GET ABI",error.message)
