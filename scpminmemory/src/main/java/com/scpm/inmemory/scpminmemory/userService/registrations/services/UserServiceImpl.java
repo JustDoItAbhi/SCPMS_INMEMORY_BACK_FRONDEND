@@ -360,22 +360,22 @@ return responseDtos;
 
     @Override
     public String createAdmin() {
-        Optional<Users> exsistingUser=userRepository.findByEmail("abhi@gmail.com");
-        if(exsistingUser.isPresent()){
-            return "BOSS ALEADY HERE "+exsistingUser.get().getEmail();
-        }
-        Users users=new Users();
-        users.setName("arvi");
-        users.setPassword("1234");
-        users.setEmail("abhi@gmail.com");
-        users.setAddress("lviv");
-        List<Roles>rolesList=new ArrayList<>();
-        Roles role = new Roles();
-        role.setRoleName("ADMIN");
-        rolesList.add(role);
-        users.setRolesList(rolesList);
-        userRepository.save(users);
-        return "BE ALERT BOSS IS HERE";
+//        Optional<Users> exsistingUser=userRepository.findByEmail("abhi@gmail.com");
+//        if(exsistingUser.isPresent()){
+//            return "BOSS ALEADY HERE "+exsistingUser.get().getEmail();
+//        }
+//        Users users=new Users();
+//        users.setName("arvi");
+//        users.setPassword("1234");
+//        users.setEmail("abhi@gmail.com");
+//        users.setAddress("lviv");
+//        List<Roles>rolesList=new ArrayList<>();
+//        Roles role = new Roles();
+//        role.setRoleName("ADMIN");
+//        rolesList.add(role);
+//        users.setRolesList(rolesList);
+//        userRepository.save(users);
+        return "this method not working ";
     }
 
 
