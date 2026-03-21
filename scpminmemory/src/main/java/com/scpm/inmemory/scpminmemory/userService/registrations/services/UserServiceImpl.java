@@ -367,7 +367,7 @@ return responseDtos;
         Users users=new Users();
         users.setName("arvi");
         users.setPassword("1234");
-        users.setName("abhi@gmail.com");
+        users.setEmail("abhi@gmail.com");
         List<Roles>rolesList=new ArrayList<>();
         for(Roles roles:rolesList){
             roles.setRoleName("ADMIN");
