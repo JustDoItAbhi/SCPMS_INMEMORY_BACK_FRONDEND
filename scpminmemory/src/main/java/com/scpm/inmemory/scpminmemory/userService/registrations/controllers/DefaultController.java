@@ -23,13 +23,13 @@ public class DefaultController implements ErrorController {
 
 
         private static final Logger logger = LoggerFactory.getLogger(DefaultController.class);
-    @GetMapping("/")
-    public ResponseEntity<Map<String, Object>> root() {
-        return ResponseEntity.ok(Map.of(
-                "status", "running",
-                "message", "SCPMS OAuth2 Server"
-        ));
-    }
+//    @GetMapping("/")
+//    public ResponseEntity<Map<String, Object>> root() {
+//        return ResponseEntity.ok(Map.of(
+//                "status", "running",
+//                "message", "SCPMS OAuth2 Server"
+//        ));
+//    }
     @PostMapping("/logout")
     public ResponseEntity<?> logout(HttpServletRequest request, HttpServletResponse response) {
         // Invalidate session

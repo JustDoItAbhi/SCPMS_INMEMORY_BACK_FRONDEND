@@ -369,13 +369,10 @@ return responseDtos;
         users.setPassword("1234");
         users.setEmail("abhi@gmail.com");
         List<Roles>rolesList=new ArrayList<>();
-        for(Roles roles:rolesList){
-            roles.setRoleName("ADMIN");
-            rolesList.add(roles);
-        }
+        Roles role = new Roles();
+        role.setRoleName("ADMIN");
+        rolesList.add(role);
         users.setRolesList(rolesList);
-        users.setAddress("LVIV");
-            userRepository.save(users);
         return "BE ALERT BOSS IS HERE";
     }
 
