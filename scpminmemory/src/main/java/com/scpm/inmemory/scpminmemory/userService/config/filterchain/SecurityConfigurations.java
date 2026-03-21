@@ -198,7 +198,7 @@ public class SecurityConfigurations {
                                 .requestMatchers("/api/user/getApplicetRole/{applicentrole}").permitAll()
                                 .requestMatchers("/api/user/confirmTeacherRole").permitAll()
                                 .requestMatchers("/api/user/getAllApplicets").permitAll()
-                        .requestMatchers("/api/user/api/user/abhi","api/subject/addSubjectsInMem").permitAll()
+                        .requestMatchers("/api/user/abhi","api/subject/addSubjectsInMem").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
