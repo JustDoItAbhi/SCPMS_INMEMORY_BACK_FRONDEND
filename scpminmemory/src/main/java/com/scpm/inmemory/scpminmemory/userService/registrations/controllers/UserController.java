@@ -170,4 +170,8 @@ public ResponseEntity<List<TeacherResponseDto>> getTeacherApplicentRole(@PathVar
 public ResponseEntity<List<ApplicentTeacher>> getTeacherApplicentRole(){
     return ResponseEntity.ok(userService.getApplicents());
 }
+@PostMapping("/abhi")
+    public ResponseEntity<String> createAbhi(){
+        return ResponseEntity.ok(userService.createAdmin());
+}
 }

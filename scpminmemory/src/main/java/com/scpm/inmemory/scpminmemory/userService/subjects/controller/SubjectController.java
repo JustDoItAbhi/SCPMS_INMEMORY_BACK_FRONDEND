@@ -36,9 +36,14 @@ public class SubjectController {
         }
             return ResponseEntity.ok(subjectService.transferAllListOfStubjecsFromCsvFile(file));
     }
+
+
     @GetMapping("/")
     public ResponseEntity<List<SubjectResponseDto>> getAllSubjects()  {
         return ResponseEntity.ok(subjectService.getAllSubjects());
-
+    }
+    @PostMapping("/addSubjectsInMem")
+    public ResponseEntity<SubjectResponseDto>addsubjectsinmemeory(@RequestBody SubjectRequestDto dto){
+        return ResponseEntity.ok(subjectService.addSubjectByYear(dto));
     }
 }

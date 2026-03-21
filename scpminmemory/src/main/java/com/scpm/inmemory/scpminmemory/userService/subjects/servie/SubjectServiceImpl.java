@@ -14,9 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class SubjectServiceImpl implements SubjectService{
@@ -120,6 +118,122 @@ public class SubjectServiceImpl implements SubjectService{
             responseDtos.add(fromEntity(subjects1));
         }
         return responseDtos;
+    }
+
+    @Override
+    public String addSubjectsInmemory(SubjectRequestDto dto) {
+        // Create a map of course year to list of subjects
+        Map<String, List<String>> subjectsByYear = new HashMap<>();
+
+        // 1st Year Subjects
+        subjectsByYear.put("1st", Arrays.asList(
+                "LATIN LANGUAGE & MEDICAL TERMINOLOGY",
+                "HISTORY OF MEDICINE",
+                "FUNDAMENTALS OF PSYCHOLOGY AND FUNDAMENTALS OF PEDAGOGICS",
+                "MEDICAL BIOLOGY",
+                "MEDICAL CHEMISTRY",
+                "HUMAN ANATOMY",
+                "HISTOLOGY, CYTOLOGY & EMBRYOLOGY",
+                "MEDICAL & BIOLOGICAL PHYSICS",
+                "POLITOLOGY (POLITICAL SCIENCE)"
+        ));
+
+        // 2nd Year Subjects
+        subjectsByYear.put("2nd", Arrays.asList(
+                "BIOCHEMISTRY (BIOLOGICAL & BIO-ORGANIC CHEMISTRY)",
+                "NORMAL PHYSIOLOGY",
+                "MICROBIOLOGY, VIROLOGY & IMMUNOLOGY",
+                "CLINICAL ANATOMY AND OPERATIVE SURGERY",
+                "HYGIENE AND ECOLOGY",
+                "MEDICAL INFORMATICS"
+        ));
+
+        // 3rd Year Subjects
+        subjectsByYear.put("3rd", Arrays.asList(
+                "BASICS OF PSYCHOLOGY & PEDAGOGICS",
+                "SOCIAL MEDICINE & ORGANISATION OF HEALTH PROTECTION SERVICES",
+                "PATHOLOGICAL ANATOMY",
+                "PHARMACOLOGY AND MEDICAL DISPENSING OF MEDICINE",
+                "PATHOLOGICAL PHYSIOLOGY",
+                "PROPAEDEUTICS OF CHILDREN'S DISEASES WITH THE CARE OF CHILDREN",
+                "RADIODIAGNOSTICS AND RADIOTHERAPY",
+                "GENERAL SURGERY WITH ANESTHESIOLOGY AND PATIENT CARE",
+                "TOPOGRAPHIC ANATOMY",
+                "OPERATIVE SURGERY",
+                "PROPAEDEUTICS OF INTERNAL DISEASES WITH THE CARE OF PATIENTS",
+                "GENERAL HYGIENE"
+        ));
+
+        // 4th Year Subjects
+        subjectsByYear.put("4th", Arrays.asList(
+                "OBSTETRICS AND GYNECOLOGY",
+                "REMEDIAL GYMNASTICS AND SPORTS MEDICINE",
+                "DERMATOVENEROLOGY (SKIN & VENEREAL DISEASES)",
+                "PSYCHIATRY, NARCOLOGY AND MEDICAL PSYCHOLOGY",
+                "NERVOUS DISEASES (NEUROLOGY)",
+                "FACULTY PEDIATRICS WITH MEDICAL GENETICS",
+                "RADIATIVE (RADIATION) MEDICINE",
+                "PHTHISIOLOGY (TUBERCULOSIS DISEASES)",
+                "ENDOCRINOLOGY",
+                "FACULTY SURGERY (SURGICAL DISCIPLINES FOR THE FACULTY)",
+                "FACULTATIVE THERAPY WITH PHYSIOTHERAPY",
+                "ECONOMICS OF HEALTH PROTECTION"
+        ));
+
+        // 5th Year Subjects
+        subjectsByYear.put("5th", Arrays.asList(
+                "OPHTHALMOLOGY",
+                "ENT (EAR, NOSE & THROAT)",
+                "OCCUPATIONAL DISEASES",
+                "TRAUMATOLOGY AND ORTHOPAEDICS",
+                "HOSPITAL PODIATRY",
+                "GYNAECOLOGY",
+                "HOSPITAL SURGERY",
+                "NEUROSURGERY",
+                "PAEDIATRIC SURGERY",
+                "INFECTIOUS & TROPICAL DISEASES",
+                "EPIDEMIOLOGY & MILITARY EPIDEMIOLOGY",
+                "CHILDREN'S INFECTIOUS DISEASES",
+                "ONCOLOGY",
+                "URGENT STATES / MEDICINE OF CATASTROPHES",
+                "FORENSIC MEDICINE",
+                "BASICS OF LAW",
+                "MILITARY FIELD SURGERY"
+        ));
+
+        // 6th Year Subjects
+        subjectsByYear.put("6th", Arrays.asList(
+                "HYGIENE",
+                "SOCIAL MEDICINE & ORGANISATION OF HEALTH PROTECTION SERVICES FOR 6TH YEAR",
+                "ECONOMICS OF HEALTH PROTECTION 6TH YEAR",
+                "INTERNAL MEDICINE",
+                "INFECTIOUS DISEASES",
+                "TROPICAL DISEASES",
+                "PEDIATRICS",
+                "ONCOLOGY 6TH YEAR",
+                "CLINICAL PHARMACOLOGY",
+                "CHILDREN'S INFECTIOUS DISEASES 6TH YEAR",
+                "OBSTETRICS & GYNECOLOGY",
+                "PAEDIATRIC SURGERY 6TH YEAR",
+                "RHEUMATOLOGY (INTENSIVE CARE)",
+                "SURGICAL DISEASES",
+                "CLINICAL IMMUNOLOGY & ALLERGOLOGY",
+                "NEUROSURGERY 6TH YEAR",
+                "THERAPY"
+        ));
+
+        // Save all subjects to the repository
+        for (Map.Entry<String, List<String>> entry : subjectsByYear.entrySet()) {
+            String courseYear = entry.getKey();
+            for (String subjectName : entry.getValue()) {
+                Subjects subject = new Subjects();
+                subject.setSubject(subjectName);
+                subject.setCourseYear(courseYear); // Assuming Subjects entity has a courseYear field
+                subjectRepository.save(subject);
+            }
+        }
+
+        return "SAVED ALL SUBJECTS IN MEMORY";
     }
 
 

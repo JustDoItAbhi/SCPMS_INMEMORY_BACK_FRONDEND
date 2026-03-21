@@ -373,4 +373,14 @@ export const AllTeacherRequests=async()=>{
         // Throw the error so it can be caught in the component
         throw new Error(err.response?.data?.message || err.message || "Failed to get teachers");
     }
+    
+}
+export const AddSubjectIn_memory=async()=>{
+    try{
+        const response=await axiosInstance.get(`/api/subject/addSubjectsInMem`);
+        console.log("SUBJECTS ADDED ",response.data)
+        return response.data
+    }catch(err){
+        console.log(err.message);
+    }
 }

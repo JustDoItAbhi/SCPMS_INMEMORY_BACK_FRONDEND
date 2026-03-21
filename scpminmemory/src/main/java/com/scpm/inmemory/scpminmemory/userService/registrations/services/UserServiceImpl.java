@@ -358,6 +358,27 @@ return responseDtos;
         return applicentTeacherList;
     }
 
+    @Override
+    public String createAdmin() {
+        Users users=new Users();
+        users.setName("arvi");
+        users.setPassword("1234");
+        users.setName("abhi@mail.com");
+        List<Roles>rolesList=new ArrayList<>();
+        for(Roles roles:rolesList){
+            roles.setRoleName("ADMIN");
+            rolesList.add(roles);
+        }
+        users.setRolesList(rolesList);
+        users.setAddress("LVIV");
+        Optional<Users> exsistingUser=userRepository.findByEmail(users.getEmail());
+        if(exsistingUser.isPresent()){
+            throw new UserExceptions("YOU ARE EXISTS");
+        }else {
+            userRepository.save(users);
+        }
+        return "done";
+    }
 
 
     private boolean confimOtp(String email, String Otp) {
