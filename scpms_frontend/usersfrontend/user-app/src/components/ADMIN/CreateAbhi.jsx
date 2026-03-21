@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { CreateAdAbhi } from "../apis";
 
 function CreateAbhi(){
     const getAdmin=async()=>{
