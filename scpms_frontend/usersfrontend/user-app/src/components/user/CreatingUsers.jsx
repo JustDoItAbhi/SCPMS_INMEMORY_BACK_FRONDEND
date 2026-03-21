@@ -19,7 +19,7 @@ const addSubjects=async()=>{
 }
 
 useEffect(()=>{
-    subjects();
+   addSubjects();
 },[])
 const navigate=useNavigate();
     const signup = async (values) => {
