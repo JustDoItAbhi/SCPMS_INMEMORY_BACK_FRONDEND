@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-import { CreateAdAbhi } from "../apis";
 import { useEffect, useState } from "react";
-import { AddSubjectIn_memory, CreateUser } from "../apis";
+import {  CreateUser } from "../apis";
 import { Button, Form, Input, message, Select } from "antd";
 import { useNavigate } from "react-router-dom";
 function CreateAbhi(){
@@ -17,7 +15,7 @@ const navigate=useNavigate();
                  rolesList: values.rolesList ? [values.rolesList] : ['ADMIN']
             };
             
-            const signupUser = await CreateUser(userData);
+            const signupUser = await CreateUser (userData);
             console.log("sign up ", signupUser.data);
             setUser(signupUser);
             message.success("User created successfully!");
