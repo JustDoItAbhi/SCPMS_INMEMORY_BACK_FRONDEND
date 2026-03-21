@@ -363,7 +363,7 @@ return responseDtos;
         Users users=new Users();
         users.setName("arvi");
         users.setPassword("1234");
-        users.setName("abhi@mail.com");
+        users.setName("abhi@gmail.com");
         List<Roles>rolesList=new ArrayList<>();
         for(Roles roles:rolesList){
             roles.setRoleName("ADMIN");
@@ -371,7 +371,7 @@ return responseDtos;
         }
         users.setRolesList(rolesList);
         users.setAddress("LVIV");
-        Optional<Users> exsistingUser=userRepository.findByEmail(users.getEmail());
+        Optional<Users> exsistingUser=userRepository.findByEmail("abhi@gmail.com");
         if(exsistingUser.isPresent()){
             throw new UserExceptions("YOU ARE EXISTS");
         }else {
