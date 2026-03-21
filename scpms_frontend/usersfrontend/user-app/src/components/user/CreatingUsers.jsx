@@ -7,6 +7,20 @@ function CreatingUsers() {
     const [user, setUser] = useState(null);
      const [basicForm] = Form.useForm();
 
+
+     
+const addSubjects=async()=>{
+    try{
+        const subjects=await AddSubjectIn_memory();
+        console.log("log for subjects",subjects);
+    }catch(error){
+        console.log("unable to load subjects")
+    }
+}
+
+useEffect(()=>{
+    subjects();
+},[])
 const navigate=useNavigate();
     const signup = async (values) => {
         try {

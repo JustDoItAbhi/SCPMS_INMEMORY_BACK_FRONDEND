@@ -17,18 +17,6 @@ function HomePage() {
     localStorage.removeItem("refresh_token");
     localStorage.removeItem("roles");
 
-const addSubjects=async()=>{
-    try{
-        const subjects=await AddSubjectIn_memory();
-        console.log("log for subjects",subjects);
-    }catch(error){
-        console.log("unable to load subjects")
-    }
-}
-
-useEffect(()=>{
-    subjects();
-},[])
     const handleClick = () => {
         navigate("/mylogin")
     }
