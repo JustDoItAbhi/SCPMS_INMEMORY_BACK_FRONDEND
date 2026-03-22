@@ -25,7 +25,7 @@ const TeacherProfile = () => {
   }, [teach]);
 
   const fetchTeacherProfile = async () => {
-    window.location.reload();
+    
     try {
       setLoading(true);
    
