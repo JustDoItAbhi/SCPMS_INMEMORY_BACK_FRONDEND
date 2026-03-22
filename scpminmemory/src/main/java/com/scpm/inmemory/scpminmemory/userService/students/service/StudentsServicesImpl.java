@@ -137,9 +137,9 @@ public class StudentsServicesImpl implements StudentsService{
         System.out.println("Topic studentAndSubject ID: " + (topic.getStudentAndSubject() != null ? topic.getStudentAndSubject().getId() : "NULL"));
         topic.setTeacherAprovels(TOPIC_STATUS.WAITING);
         studentTopicRepo.save(topic);
-        emailService.sendOtp(exsitingTeacher.get().getUserEmail(),
-                "YOU HAVE A TOPIC REQUEST FROM "+studentAndSubject.get().getStudents().getUser().getName().toUpperCase(),
-                "PLEASE CHECK YOUR DASHBOARD  THANK YOUR");
+//        emailService.sendOtp(exsitingTeacher.get().getUserEmail(),
+//                "YOU HAVE A TOPIC REQUEST FROM "+studentAndSubject.get().getStudents().getUser().getName().toUpperCase(),
+//                "PLEASE CHECK YOUR DASHBOARD  THANK YOUR");
         System.out.println("EMAIL SENT TO TEACHER");
         return SubjectAndStudentMapper.fromTopicEntity(topic);
     }

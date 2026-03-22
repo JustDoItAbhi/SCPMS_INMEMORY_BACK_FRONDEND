@@ -89,7 +89,7 @@ useEffect(() => {
 
             const submissionData = {
                 teacherId: selectedTeacher.teacherId, // Use teacherId from the teacher object
-                studentandSubjectId: parseInt(studentandSubjectId), // Ensure it's a number
+                studentandSubjectId: parseInt(studentandSubjectId), 
                 topic: values.topic
             };
 

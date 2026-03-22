@@ -218,7 +218,6 @@ public class TeachersServiceImpl implements TeacherService{
 
         if (teacherByTopicId.isPresent()) {
             teacherAndTopics = teacherByTopicId.get();
-            // Update status if different
             if (!teacherAndTopics.getTopicStatus().equals(dto.getTopicStatus())) {
                 teacherAndTopics.setTopicStatus(mapTopicStatus(dto.getTopicStatus()));
             }
@@ -274,7 +273,7 @@ public class TeachersServiceImpl implements TeacherService{
                         name, studentId, name, course, groupNumber, subGroupNumber,
                         chosenSubject, subjectChosenYear, chosenTopic
                 );
-                emailService.sendOtp(email, subject, htmlContent);
+//                emailService.sendOtp(email, subject, htmlContent);
                 System.out.println("EMAIL SENT successfully to: " + email);
             } catch (Exception e) {
                 System.err.println("Failed to send email: " + e.getMessage());
