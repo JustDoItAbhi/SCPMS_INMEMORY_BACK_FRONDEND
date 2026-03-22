@@ -27,7 +27,7 @@ function HomePage() {
                 <div className="topic">
                 <video
                     className="mainVid"
-                    src="/Medicine.mp4"
+                    src="/cup.mp4"
                     autoPlay
                     muted
                     loop
