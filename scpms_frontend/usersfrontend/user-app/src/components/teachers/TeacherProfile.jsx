@@ -25,16 +25,14 @@ const TeacherProfile = () => {
   }, [teach]);
 
   const fetchTeacherProfile = async () => {
+    window.location.reload();
     try {
       setLoading(true);
-      // const response = await GetTeacherByidss(id.teacherId);
-      // console.log('TEACHER DATA BY ID', response);
-      // setTeacher(response);
-      //       if(!response){
+   
           const response = await GetTeacherByidss(teach);
                console.log('TEACHER DATA BY ID 2nD API', response);
       setTeacher(response);
-      // }
+
     } catch (err) {
       setError('Failed to fetch teacher profile');
       console.error('Error fetching teacher:', err);
@@ -89,7 +87,7 @@ const TeacherProfile = () => {
       <div className="error-container">
         <h3>No Request Yet Please Refresh Page Or Visit Again😟</h3>
         <p>{error}</p>
-        <button onClick={fetchTeacherProfile}>Retry</button>
+        <button onClick={fetchTeacherProfile}>Home</button>
       </div>
     );
   }
