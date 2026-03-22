@@ -3,6 +3,8 @@ package com.scpm.inmemory.scpminmemory.userService.students.service;
 
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.modals_student.StudentAndSubject;
 import com.scpm.inmemory.scpminmemory.userService.students.stDto.*;
+import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherTopicRequestDto;
+import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherTopicResponseDto;
 
 public interface StudentsService {
     StudentsResponseDto finishSignUp(long stId, StudentRequestDto dto);
@@ -14,6 +16,8 @@ public interface StudentsService {
     SelectSubjectAndStudentDetailsResponseDto getSubjectandStudentByUserId(long userId);
     Boolean deleteFullUserById(long userId);
     StudentAndSubject getStudentAndSubjectByiD(long studentAndSubjectId);
+//    TeacherTopicResponseDto saveTopicwhichIsApproved(TeacherTopicRequestDto dto);
+
 
 
 // find user by id , create a post api to find user by id , and add year and add subject and send response dto with user details and subject and year of subject

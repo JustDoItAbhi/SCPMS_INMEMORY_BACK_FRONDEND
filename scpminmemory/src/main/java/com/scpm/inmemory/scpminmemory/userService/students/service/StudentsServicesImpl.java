@@ -19,6 +19,8 @@ import com.scpm.inmemory.scpminmemory.userService.students.StudentsMapper;
 import com.scpm.inmemory.scpminmemory.userService.students.mapper.SubjectAndStudentMapper;
 import com.scpm.inmemory.scpminmemory.userService.students.stDto.*;
 import com.scpm.inmemory.scpminmemory.userService.registrations.entities.Subjects;
+import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherTopicRequestDto;
+import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherTopicResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -200,6 +202,11 @@ public class StudentsServicesImpl implements StudentsService{
         }
         return subject.get();
     }
+
+//    @Override
+//    public TeacherTopicResponseDto saveTopicwhichIsApproved(TeacherTopicRequestDto dto) {
+//        return null;
+//    }
 
 
 }

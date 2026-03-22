@@ -22,10 +22,19 @@ function HomePage() {
     }
     return (
         <div className="main-container">
-
+      
             <div>
                 <div className="topic">
-                    <button onClick={handleClick} className="buttonMenu">
+                <video
+                    className="mainVid"
+                    src="/Medicine.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                ></video>
+                <div className="video-overlay">
+                       <button onClick={handleClick} className="buttonMenu">
                         MENU
                     </button>
                     <h1 className="scpms">
@@ -36,6 +45,8 @@ function HomePage() {
                         <span>S </span>
                         <br />
                         <span className="titles">Student Conference Participation Management System </span>    </h1>
+                </div>
+                    
                 </div>
 
                 <h2 className="objective">Overview</h2>

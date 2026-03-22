@@ -1,5 +1,6 @@
 package com.scpm.inmemory.scpminmemory.userService.registrations.controllers;
 
+import com.scpm.inmemory.scpminmemory.userService.rate_limitier.RateLimit;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.LoginRequestDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.ResetPasswordReqDto;
 import com.scpm.inmemory.scpminmemory.userService.registrations.dtos.user_dto.SignUpRequestDto;
@@ -19,6 +20,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -36,10 +38,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-
-
     @GetMapping("/me")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<?> getCurrentUserDetails(Authentication authentication) {
         if (authentication != null && authentication.isAuthenticated() &&
                 authentication.getPrincipal() instanceof CustomUsersDetails userDetails) {
@@ -56,61 +56,72 @@ public class UserController {
         return ResponseEntity.status(401).body("{\"authenticated\": false}");
     }
 
-    @GetMapping("/server")
-    public String home() {
-        return "OAuth2 Server is running!";
-    }
+//    @GetMapping("/server")
+//    public String home() {
+//        return "OAuth2 Server is running!";
+//    }
 //    @GetMapping("/error")
 //    public String error() {
 //        return "Error page";
 //    }
 
     @PostMapping("/StudentSignUp")
+    @RateLimit(limit = 100,duration = 60)//// 100 requests per minute
     public ResponseEntity<String> sendOtpToStudentEmail(@RequestBody StudentOtpRequest request){
         return ResponseEntity.ok(userService.studentSignup(request.getEmail(), request.getRoles()));
     }
     @PostMapping("/ConfirmStudentSignUp/otp")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<String> confirmstudentOtp(@RequestBody StudentSingupReqDto dto){
         System.out.println(dto.getEmail()+" AND "+dto.getOtp());
         return ResponseEntity.ok(userService.confirmStudentOtp(dto.getEmail(), dto.getOtp()));
     }
 
     @PostMapping("/createUser")
+    @RateLimit(limit = 100,duration = 3600)
     public ResponseEntity<UserResponseDto> createUser(@RequestBody SignUpRequestDto dto){
         return ResponseEntity.ok(userService.createUser(dto));
     }
     @GetMapping("/allUsers")
 //    @PreAuthorize("hasRole('ADMIN')")
+    @RateLimit(limit = 10,duration = 60)
     public ResponseEntity<List<UserResponseDto>> AllUser(){
         return ResponseEntity.ok(userService.getAllUsers());
     }
     @PostMapping("/Login")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<LoginResponseDto> loginUser(@RequestBody LoginRequestDto dto){
         return ResponseEntity.ok(userService.login(dto.getUserEmail(), dto.getPassword()));
     }
     @GetMapping("/getUserById/{id}")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<UserResponseDto> getUser(@PathVariable ("id") long id){
         return ResponseEntity.ok(userService.getUserById(id));
     }
     @DeleteMapping("/DeleteUserById/{id}")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<Boolean> deleteUser(@PathVariable ("id") Long Id){
         return ResponseEntity.ok(userService.deleteUserById(Id));
     }
     @PutMapping("/updateUser/{id}")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<UserResponseDto> updateUser(@PathVariable ("id")long id, @RequestBody UpdateUserDto dto){
         return ResponseEntity.ok(userService.updateUser(id,dto));
     }
 
     @GetMapping("/sendOtp/{email}")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<OtpResponseDto> sentOtp(@PathVariable ("email") String email){
            OtpResponseDto dto= userService.sendOtp(email);
            return ResponseEntity.ok(dto);
     }
     @PostMapping("/resetPassword")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<UserResponseDto> resetPassword(@RequestBody ResetPasswordReqDto dto){
         return ResponseEntity.ok(userService.resetPassword(dto.getEmail(),dto.getOtp(),dto.getPassword()));
     }
     @GetMapping("/debug")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> debugAdminRole() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -135,6 +146,8 @@ public class UserController {
         );
     }
     @GetMapping("/session-info")
+    @PreAuthorize("hasRole('ADMIN')")
+    @RateLimit(limit = 1,duration = 60)
     public ResponseEntity<Map<String, Object>> getSessionInfo(HttpSession session) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -158,20 +171,30 @@ public class UserController {
         return ResponseEntity.ok(sessionInfo);
     }
     @PostMapping("/confirmTeacherRole")
+    @RateLimit(limit = 100,duration = 60)
     public ResponseEntity<TeacherUserResponseDto> setTeacherRole(@RequestBody TeacherUserRequestDto dto){
         return ResponseEntity.ok(userService.approveTeacherSignUp(dto));
     }
 
 @GetMapping("/getApplicetRole/{applicentrole}")
+@RateLimit(limit = 100,duration = 60)
 public ResponseEntity<List<TeacherResponseDto>> getTeacherApplicentRole(@PathVariable("applicentrole")String role){
     return ResponseEntity.ok(userService.getAllApplicaentTeachers(role));
 }
 @GetMapping("/getAllApplicets")
+@RateLimit(limit = 100,duration = 60)
+@PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<List<ApplicentTeacher>> getTeacherApplicentRole(){
     return ResponseEntity.ok(userService.getApplicents());
 }
 @PostMapping("/abhi")
+@RateLimit(limit = 10,duration = 60)
     public ResponseEntity<String> createAbhi(){
         return ResponseEntity.ok(userService.createAdmin());
 }
+    @GetMapping("/test-rate-limit")
+    @RateLimit(limit = 3, duration = 60)
+    public ResponseEntity<String> testRateLimit() {
+        return ResponseEntity.ok("This endpoint is rate limited to 3 requests per minute");
+    }
 }

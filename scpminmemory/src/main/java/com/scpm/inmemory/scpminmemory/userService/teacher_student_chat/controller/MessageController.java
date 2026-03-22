@@ -1,6 +1,7 @@
 package com.scpm.inmemory.scpminmemory.userService.teacher_student_chat.controller;
 
 
+import com.scpm.inmemory.scpminmemory.userService.rate_limitier.RateLimit;
 import com.scpm.inmemory.scpminmemory.userService.teacher_student_chat.dto.ConversationPreview;
 import com.scpm.inmemory.scpminmemory.userService.teacher_student_chat.dto.MessageRequestDto;
 import com.scpm.inmemory.scpminmemory.userService.teacher_student_chat.entity.Message;
@@ -24,6 +25,7 @@ public class MessageController {
     }
 
     @PostMapping("/send")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<Map<String, Object>> sendMessage(@RequestBody MessageRequestDto request) {
         Message message = messageService.sendMessage(
                 request.getSenderId(),
@@ -38,6 +40,7 @@ public class MessageController {
     }
 
     @GetMapping("/conversation/{userId1}/{userId2}")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<List<Message>> getConversation(
             @PathVariable Long userId1,
             @PathVariable Long userId2) {
@@ -45,6 +48,7 @@ public class MessageController {
     }
 
     @PutMapping("/mark-read/{receiverId}")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<Map<String, Object>> markAsRead(@PathVariable Long receiverId) {
         int count = messageService.markMessagesAsRead(receiverId);
         Map<String, Object> response = new HashMap<>();
@@ -54,6 +58,7 @@ public class MessageController {
     }
 
     @GetMapping("/unread/{userId}")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<Map<String, Object>> getUnreadCount(@PathVariable Long userId) {
         long count = messageService.getUnreadCount(userId);
         Map<String, Object> response = new HashMap<>();
@@ -62,12 +67,14 @@ public class MessageController {
     }
 
     @GetMapping("/conversations/{userId}")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<List<ConversationPreview>> getUserConversations(
             @PathVariable Long userId) {
         return ResponseEntity.ok(messageService.getUserConversations(userId));
     }
 
     @DeleteMapping("/{messageId}/{userId}")
+    @RateLimit(limit = 50,duration = 60)
     public ResponseEntity<Map<String, Object>> deleteMessage(
             @PathVariable Long messageId,
             @PathVariable Long userId) {

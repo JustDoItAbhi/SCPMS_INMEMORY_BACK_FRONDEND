@@ -2,6 +2,7 @@ package com.scpm.inmemory.scpminmemory.userService.registrations.controllers;
 
 import com.scpm.inmemory.scpminmemory.userService.config.JwtTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 public class TokenController {
 
     @GetMapping("/profile")
+    @PreAuthorize("hasRole('ADMIN')")
     public HashMap<String,Object> profile() {
         Authentication auth =
                 SecurityContextHolder.getContext().getAuthentication();

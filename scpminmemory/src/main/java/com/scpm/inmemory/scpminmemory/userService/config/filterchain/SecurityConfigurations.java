@@ -182,6 +182,7 @@ public class SecurityConfigurations {
                                 "/api/user/StudentSignUp",
                                 "/api/user/allUsers",
                                 "/api/user/ConfirmStudentSignUp/otp/**",
+                                "/api/user/sendOtp/**",
                                 "/api/subject/**",
                                 "/api/user/customeLogin/login"
                         ).permitAll()
@@ -199,7 +200,7 @@ public class SecurityConfigurations {
                                 .requestMatchers("/api/user/confirmTeacherRole").permitAll()
                                 .requestMatchers("/api/user/getAllApplicets").permitAll()
                         .requestMatchers("/api/user/abhi","api/subject/addSubjectsInMem").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
