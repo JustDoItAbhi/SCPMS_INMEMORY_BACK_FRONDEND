@@ -93,6 +93,14 @@ const navigate=useNavigate();
                     <Input type="text" placeholder="Enter your address" />
                 </Form.Item>
 
+                    <Form.Item
+                    label="TelegramUserName"
+                    name="TelegramUserName"
+                    rules={[{ required: true, message: "Please enter your TelegramUserName" }]}
+                >
+                    <Input type="text" placeholder="Enter your TelegramUserName" />
+                </Form.Item>
+
                 <Form.Item
                     label="Role"
                     name="rolesList"
