@@ -24,11 +24,14 @@ import com.scpm.inmemory.scpminmemory.userService.registrations.repos.UserReposi
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.role_repo.RolesRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.student_otp_repo.StudentOtpRepository;
 import com.scpm.inmemory.scpminmemory.userService.registrations.repos.teacheruser_applicent.TeachrUserApplicentRepo;
+import com.scpm.inmemory.scpminmemory.userService.registrations.telegram.TelegramOtpResponseDto;
+import com.scpm.inmemory.scpminmemory.userService.registrations.telegram.TelegramService;
 import com.scpm.inmemory.scpminmemory.userService.teachers.teachermappers.TeacherMapper;
 import com.scpm.inmemory.scpminmemory.userService.teachers.teachersDtos.TeacherResponseDto;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -44,7 +47,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService{
     @Autowired
@@ -64,10 +67,13 @@ public class UserServiceImpl implements UserService{
     private TeacherRepository teacherRepository;
     @Autowired
     private TeachrUserApplicentRepo teacherApplicentRepo;
+
     @Autowired
    private final BCryptPasswordEncoder passwordEncoder;
     @Autowired
     private  iEmailService emailService;
+    @Autowired
+    private TelegramService telegramService;
 
     public UserServiceImpl(StudentOtpRepository studentOtpRepository, UserRepository userRepository, AuthenticationManager authenticationManager, RolesRepository rolesRepository, JwtEncoder jwtEncoder,
                            TeacherUserRepository teacherUserRepository,
@@ -360,21 +366,7 @@ return responseDtos;
 
     @Override
     public String createAdmin() {
-//        Optional<Users> exsistingUser=userRepository.findByEmail("abhi@gmail.com");
-//        if(exsistingUser.isPresent()){
-//            return "BOSS ALEADY HERE "+exsistingUser.get().getEmail();
-//        }
-//        Users users=new Users();
-//        users.setName("arvi");
-//        users.setPassword("1234");
-//        users.setEmail("abhi@gmail.com");
-//        users.setAddress("lviv");
-//        List<Roles>rolesList=new ArrayList<>();
-//        Roles role = new Roles();
-//        role.setRoleName("ADMIN");
-//        rolesList.add(role);
-//        users.setRolesList(rolesList);
-//        userRepository.save(users);
+
         return "this method not working ";
     }
 
@@ -536,12 +528,24 @@ return responseDtos;
             userCache.put(users.getEmail(), users);
         }
 
-        emailService.sendOtp(users.getEmail(), "YOUR OTP IS " + otp, "THANK YOU");
+//        emailService.sendOtp(users.getEmail(), "YOUR OTP IS " + otp, "THANK YOU");
+
+        TelegramOtpResponseDto telegramOtpResponseDto=new TelegramOtpResponseDto();
+        if (users.getTelegramUsername() != null && !users.getTelegramUsername().isEmpty()) {
+            boolean telegramSent = telegramService.sendOtpByUsername(users.getTelegramUsername(), otp);
+          telegramOtpResponseDto.setTelegramSent(telegramSent);
+            telegramOtpResponseDto.setTelegramUsername(users.getTelegramUsername());
+
+            System.out.println("TELEGRAM OTP "+ telegramOtpResponseDto.getOtp()+" TELGRAM USERNAME"+ telegramOtpResponseDto.getTelegramUsername());
+        } else {
+            telegramOtpResponseDto.setTelegramSent(false);
+            log.warn("No Telegram username found for user: {}", email);
+        }
 
         OtpResponseDto dto = new OtpResponseDto();
-        dto.setEmail(email);
-        dto.setOtp(otp);
-        dto.setExpiryTime(expiryTime);
+        dto.setEmail(telegramOtpResponseDto.getEmail());
+        dto.setOtp(telegramOtpResponseDto.getOtp());
+        dto.setExpiryTime(telegramOtpResponseDto.getExpiryTime());
 
         return dto;
 

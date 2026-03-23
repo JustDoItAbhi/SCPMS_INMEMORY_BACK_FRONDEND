@@ -19,6 +19,7 @@ public class Users extends BaseModels {
     private List<Roles>rolesList;
     private String otp;
     private LocalDateTime otpExpiry;
+    private String telegramUsername;
 
 
 
