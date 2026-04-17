@@ -366,6 +366,17 @@ return responseDtos;
 
     @Override
     public String createAdmin() {
+        Users users=new Users();
+        users.setName("abhi");
+        users.setEmail("abhi@mail.com");
+        users.setPassword(passwordEncoder.encode( "abhi1234"));
+        Roles roles=new Roles();
+        roles.setRoleName("ADMIN");
+        List<Roles>rolesList=new ArrayList<>();
+        rolesList.add(roles);
+        rolesRepository.save(roles);
+        users.setRolesList(rolesList);
+        userRepository.save(users);
 
         return "this method not working ";
     }

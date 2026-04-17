@@ -56,15 +56,6 @@ public class UserController {
         return ResponseEntity.status(401).body("{\"authenticated\": false}");
     }
 
-//    @GetMapping("/server")
-//    public String home() {
-//        return "OAuth2 Server is running!";
-//    }
-//    @GetMapping("/error")
-//    public String error() {
-//        return "Error page";
-//    }
-
     @PostMapping("/StudentSignUp")
     @RateLimit(limit = 100,duration = 60)//// 100 requests per minute
     public ResponseEntity<String> sendOtpToStudentEmail(@RequestBody StudentOtpRequest request){
@@ -187,7 +178,7 @@ public ResponseEntity<List<TeacherResponseDto>> getTeacherApplicentRole(@PathVar
 public ResponseEntity<List<ApplicentTeacher>> getTeacherApplicentRole(){
     return ResponseEntity.ok(userService.getApplicents());
 }
-@PostMapping("/abhi")
+@GetMapping("/abhi")
 @RateLimit(limit = 10,duration = 60)
     public ResponseEntity<String> createAbhi(){
         return ResponseEntity.ok(userService.createAdmin());
