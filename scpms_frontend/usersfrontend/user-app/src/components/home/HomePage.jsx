@@ -20,29 +20,32 @@ function HomePage() {
     const handleClick = () => {
         navigate("/mylogin")
     }
+
+
     return (
         <div className="main-container">
       
             <div>
                 <div className="topic">
-                <video
+                {/* <video
                     className="mainVid"
                     src="/cup.mp4"
                     autoPlay
                     muted
                     loop
                     playsInline
-                ></video>
+                ></video> */}
                 <div className="video-overlay">
                        <button onClick={handleClick} className="buttonMenu">
                         MENU
                     </button>
-                    <h1 className="scpms">
+                    <h1 className="scpms" >
                         <span>S </span>
                         <span>C </span>
                         <span>P </span>
                         <span>M </span>
                         <span>S </span>
+
                         <br />
                         <span className="titles">Student Conference Participation Management System </span>    </h1>
                 </div>
