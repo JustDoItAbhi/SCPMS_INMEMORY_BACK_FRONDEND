@@ -178,7 +178,7 @@ public ResponseEntity<List<TeacherResponseDto>> getTeacherApplicentRole(@PathVar
 public ResponseEntity<List<ApplicentTeacher>> getTeacherApplicentRole(){
     return ResponseEntity.ok(userService.getApplicents());
 }
-@GetMapping("/abhi")
+@PostMapping("/abhi")
 @RateLimit(limit = 10,duration = 60)
     public ResponseEntity<String> createAbhi(@RequestBody SignUpRequestDto dto){
         return ResponseEntity.ok(userService.createAdmin(dto));

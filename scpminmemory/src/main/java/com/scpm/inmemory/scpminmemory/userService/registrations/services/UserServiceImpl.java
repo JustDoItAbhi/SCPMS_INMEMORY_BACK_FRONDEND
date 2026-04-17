@@ -397,10 +397,6 @@ return responseDtos;
             rolesList.add(role);
         }
         users.setRolesList(rolesList);
-        // if ROLE IS STUDENT THEN SEND OTP TO CONFIM EMAIL AND ADD OTP PAGE IN REACT AND FINISH SIGN UP
-
-        // IF ROLE IS TEACHER THEN SEND EMAIL AND WAIT FOR ADMIN TO CONFIM EMAIL , AND SEND EMAIL TO TEACHER WITH A LINK TO FINISH SIGNUP
-        users.setRolesList(rolesList);
         try {
             userRepository.save(users);
         }catch (Exception e){
