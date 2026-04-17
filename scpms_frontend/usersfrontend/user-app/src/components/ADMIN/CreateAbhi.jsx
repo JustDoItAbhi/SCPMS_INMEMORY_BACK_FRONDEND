@@ -15,7 +15,7 @@ const navigate=useNavigate();
                  rolesList: values.rolesList ? [values.rolesList] : ['ADMIN']
             };
             
-            const signupUser = await CreateUser ();
+            const signupUser = await CreateUser (userData);
             console.log("sign up ", signupUser.data);
             setUser(signupUser);
             message.success("User created successfully!");

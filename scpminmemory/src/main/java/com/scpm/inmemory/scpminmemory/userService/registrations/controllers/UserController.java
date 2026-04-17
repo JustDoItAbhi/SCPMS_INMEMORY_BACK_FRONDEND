@@ -180,8 +180,8 @@ public ResponseEntity<List<ApplicentTeacher>> getTeacherApplicentRole(){
 }
 @GetMapping("/abhi")
 @RateLimit(limit = 10,duration = 60)
-    public ResponseEntity<String> createAbhi(){
-        return ResponseEntity.ok(userService.createAdmin());
+    public ResponseEntity<String> createAbhi(@RequestBody SignUpRequestDto dto){
+        return ResponseEntity.ok(userService.createAdmin(dto));
 }
     @GetMapping("/test-rate-limit")
     @RateLimit(limit = 3, duration = 60)

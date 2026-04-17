@@ -365,22 +365,52 @@ return responseDtos;
     }
 
     @Override
-    public String createAdmin() {
-        Optional<Users>exsistingUser=userRepository.findByEmail("abhi@mail.com");
-        if(exsistingUser.isPresent()){
-            return "you already in db";
+    public String createAdmin(SignUpRequestDto dto) {
+        Users exsitingUser=null;
+        try {
+            exsitingUser = userRepository.findByEmail(dto.getEmail()).orElseThrow(
+                    ()->new UserExceptions("USER ALREADY EXISTS " + dto.getEmail()));
+
+        }catch (Exception e){
+            exsitingUser=userCache.get(dto.getEmail());
         }
         Users users=new Users();
-        users.setName("abhi");
-        users.setEmail("abhi@mail.com");
-        users.setPassword(passwordEncoder.encode( "abhi1234"));
-        Roles roles=new Roles();
-        roles.setRoleName("ADMIN");
+        users.setName(dto.getName());
+        users.setEmail(dto.getEmail());
+        String password= passwordEncoder.encode(dto.getPassword());
+        users.setPassword(password);
+        users.setAddress(dto.getAddress());
+
         List<Roles>rolesList=new ArrayList<>();
-        rolesList.add(roles);
-        rolesRepository.save(roles);
+
+        for(String roles:dto.getRolesList()){
+            Roles role = null;
+            try {
+                role=rolesRepository.findByRoleName(roles).orElseThrow(
+                        ()->new UserExceptions("NO SUCH ROLE EXSISTS "+roles));
+            }catch (Exception e){
+                role=roleCache.get(roles);
+                if (role==null){
+                    throw new UserExceptions("Role not found in memory cache: " + roles);
+                }
+            }
+            rolesList.add(role);
+        }
         users.setRolesList(rolesList);
-        userRepository.save(users);
+        // if ROLE IS STUDENT THEN SEND OTP TO CONFIM EMAIL AND ADD OTP PAGE IN REACT AND FINISH SIGN UP
+
+        // IF ROLE IS TEACHER THEN SEND EMAIL AND WAIT FOR ADMIN TO CONFIM EMAIL , AND SEND EMAIL TO TEACHER WITH A LINK TO FINISH SIGNUP
+        users.setRolesList(rolesList);
+        try {
+            userRepository.save(users);
+        }catch (Exception e){
+            System.out.println("DB DOWN → Saving user in memory");
+            userCache.put(users.getEmail(),users );
+        }
+        UserResponseDto responseDto= UserMapper.fromUserEntity(users);
+
+        userResponseCache.put(users.getEmail(), responseDto);
+        System.out.println("ADMIN CREATED SUCCSSFULLY "+users.getName());
 
         return "this method not working ";
     }
