@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class TelegramService {
 
-    @Value("${spring.telegram.token}")
+//    @Value("${spring.telegram.token}")
     private String token;
 
     private final RestTemplate restTemplate = new RestTemplate();

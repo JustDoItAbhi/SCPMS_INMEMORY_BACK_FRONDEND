@@ -6,7 +6,7 @@ const BACKEND_URL = import.meta.env.VITE_DIRECT_BACKEND_URL || 'http://localhost
 const REDIRECT_URI = import.meta.env.VITE_DIRECT_REDIRECT_URI;
 
 console.log("🌐 Backend URL configured:", BACKEND_URL); 
-console.log("➡️ FRONTEND RUL ",REDIRECT_URI);
+console.log("➡️ FRONTEND URL ",REDIRECT_URI);
 
 // Create axios instance
 const axiosInstance = axios.create({
