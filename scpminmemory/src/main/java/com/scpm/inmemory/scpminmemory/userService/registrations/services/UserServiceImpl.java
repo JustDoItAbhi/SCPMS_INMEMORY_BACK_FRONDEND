@@ -366,6 +366,10 @@ return responseDtos;
 
     @Override
     public String createAdmin() {
+        Optional<Users>exsistingUser=userRepository.findByEmail("abhi@mail.com");
+        if(exsistingUser.isPresent()){
+            return "you already in db";
+        }
         Users users=new Users();
         users.setName("abhi");
         users.setEmail("abhi@mail.com");
